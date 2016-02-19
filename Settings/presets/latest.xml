@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>4</seconds>
+  <depth>1</depth>
+  <attackDecay>100</attackDecay>
+  <minWaves>10</minWaves>
+  <maxWaves>20</maxWaves>
+  <mod>0</mod>
+  <oscillator>4</oscillator>
+  <baseFreq>300</baseFreq>
+  <amplitude>0.03</amplitude>
+  <sample>meep</sample>
+  <earProtection>false</earProtection>
+  <cutoffHigh>1000</cutoffHigh>
+  <cutoffLow>200</cutoffLow>
+  <name>four_four</name>
+  <transformations>
+    <Transformation>
+      <start>0</start>
+      <end>1</end>
+      <multFrequency>1</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+    <Transformation>
+      <start>0</start>
+      <end>0.5</end>
+      <multFrequency>1</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>1</end>
+      <multFrequency>1</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+  </transformations>
+</FractalPresets>

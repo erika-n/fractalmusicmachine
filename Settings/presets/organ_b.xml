@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>60</seconds>
+  <depth>5</depth>
+  <attackDecay>100</attackDecay>
+  <minWaves>10</minWaves>
+  <maxWaves>0</maxWaves>
+  <mod>0</mod>
+  <oscillator>0</oscillator>
+  <baseFreq>400</baseFreq>
+  <amplitude>0.02</amplitude>
+  <sample>eleven twelve</sample>
+  <earProtection>true</earProtection>
+  <cutoffHigh>8000</cutoffHigh>
+  <cutoffLow>100</cutoffLow>
+  <name>organ_b</name>
+  <transformations>
+    <Transformation>
+      <start>0</start>
+      <end>0.5</end>
+      <multFrequency>3</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>1</end>
+      <multFrequency>2</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>0</end>
+      <multFrequency>4</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>1</start>
+      <end>0.75</end>
+      <multFrequency>3</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.25</start>
+      <end>0.5</end>
+      <multFrequency>4</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>0.75</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+  </transformations>
+</FractalPresets>

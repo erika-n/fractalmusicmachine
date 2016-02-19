@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>35</seconds>
+  <depth>4</depth>
+  <attackDecay>500</attackDecay>
+  <minWaves>5</minWaves>
+  <maxWaves>0</maxWaves>
+  <mod>0</mod>
+  <oscillator>0</oscillator>
+  <baseFreq>250</baseFreq>
+  <amplitude>0.001</amplitude>
+  <sample>unsure</sample>
+  <earProtection>false</earProtection>
+  <cutoffHigh>0</cutoffHigh>
+  <cutoffLow>0</cutoffLow>
+  <name>more_birds</name>
+  <transformations>
+    <Transformation>
+      <start>0</start>
+      <end>0.333</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>1</start>
+      <end>0.75</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.6666</start>
+      <end>1</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.6666</start>
+      <end>0.3333</end>
+      <multFrequency>4</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.3333</start>
+      <end>0.5</end>
+      <multFrequency>3</multFrequency>
+      <color />
+    </Transformation>
+  </transformations>
+</FractalPresets>

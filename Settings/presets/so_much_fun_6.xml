@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>30</seconds>
+  <depth>6</depth>
+  <attackDecay>500</attackDecay>
+  <minWaves>10</minWaves>
+  <maxWaves>0</maxWaves>
+  <mod>0</mod>
+  <oscillator>4</oscillator>
+  <baseFreq>200</baseFreq>
+  <amplitude>0.008</amplitude>
+  <transformations>
+    <Transformation>
+      <start>0</start>
+      <end>0.5</end>
+      <multFrequency>4</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>1</start>
+      <end>0.5</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0</start>
+      <end>0.25</end>
+      <multFrequency>8</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>1</start>
+      <end>0.5</end>
+      <multFrequency>3</multFrequency>
+      <color />
+    </Transformation>
+  </transformations>
+</FractalPresets>

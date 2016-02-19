@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>15</seconds>
+  <depth>4</depth>
+  <attackDecay>50</attackDecay>
+  <minWaves>10</minWaves>
+  <maxWaves>200</maxWaves>
+  <mod>0</mod>
+  <oscillator>0</oscillator>
+  <baseFreq>300</baseFreq>
+  <amplitude>0.05</amplitude>
+  <sample>eleven twelve</sample>
+  <earProtection>true</earProtection>
+  <cutoffHigh>10000</cutoffHigh>
+  <cutoffLow>100</cutoffLow>
+  <name>flat_waves</name>
+  <transformations>
+    <Transformation>
+      <start>0.5</start>
+      <end>1</end>
+      <multFrequency>2</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+    <Transformation>
+      <start>1</start>
+      <end>0.25</end>
+      <multFrequency>1</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>0</end>
+      <multFrequency>3</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+    <Transformation>
+      <start>0.25</start>
+      <end>1</end>
+      <multFrequency>4</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+    <Transformation>
+      <start>0.25</start>
+      <end>0.75</end>
+      <multFrequency>3</multFrequency>
+      <color />
+      <freqMode>0</freqMode>
+    </Transformation>
+  </transformations>
+</FractalPresets>

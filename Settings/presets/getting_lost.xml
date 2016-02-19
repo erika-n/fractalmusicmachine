@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>500</seconds>
+  <depth>7</depth>
+  <attackDecay>100</attackDecay>
+  <minWaves>10</minWaves>
+  <maxWaves>0</maxWaves>
+  <mod>0</mod>
+  <oscillator>0</oscillator>
+  <baseFreq>500</baseFreq>
+  <amplitude>4</amplitude>
+  <sample>eleven twelve</sample>
+  <earProtection>false</earProtection>
+  <cutoffHigh>0</cutoffHigh>
+  <cutoffLow>0</cutoffLow>
+  <name>getting_lost</name>
+  <transformations>
+    <Transformation>
+      <start>0.25</start>
+      <end>0</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>1</end>
+      <multFrequency>3</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>0.25</end>
+      <multFrequency>4</multFrequency>
+      <color />
+    </Transformation>
+  </transformations>
+</FractalPresets>

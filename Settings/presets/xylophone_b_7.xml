@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FractalPresets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <seconds>240</seconds>
+  <depth>7</depth>
+  <attackDecay>100</attackDecay>
+  <minWaves>10</minWaves>
+  <maxWaves>20</maxWaves>
+  <mod>0</mod>
+  <oscillator>0</oscillator>
+  <baseFreq>1000</baseFreq>
+  <amplitude>0.08</amplitude>
+  <sample>unsure</sample>
+  <earProtection>false</earProtection>
+  <cutoffHigh>800</cutoffHigh>
+  <cutoffLow>200</cutoffLow>
+  <name>xylophone_b</name>
+  <transformations>
+    <Transformation>
+      <start>0.5</start>
+      <end>0.75</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>1</start>
+      <end>0.75</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.25</start>
+      <end>0</end>
+      <multFrequency>4</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0.5</start>
+      <end>1</end>
+      <multFrequency>3</multFrequency>
+      <color />
+    </Transformation>
+    <Transformation>
+      <start>0</start>
+      <end>0.5</end>
+      <multFrequency>6</multFrequency>
+      <color />
+    </Transformation>
+  </transformations>
+</FractalPresets>
