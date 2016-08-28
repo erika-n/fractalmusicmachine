@@ -60,3 +60,8 @@ bin
 obj
 TestSoundLab
 BubbleBubbleConsole
+Settings
+Output
+
+# visual studio stuff
+.suo

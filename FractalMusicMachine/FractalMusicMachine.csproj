@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9498815E-916F-4E01-B18E-53789D258DFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoundLabUI</RootNamespace>
+    <AssemblyName>FractalMusicMachine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Erika\Documents\Programming\SoundLab\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ED364748D061FE19CDB92A6B9D16973E4F92CCFB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SoundLabUI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaveForm.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\almostbeeping.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\almostbeeping_helloworld_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\almostbeeping_helloworld_4.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\almostbeeping_helloworld_6.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\also_charming.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\another_place.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\arizona_fountain.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\arizona_fountain_9.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\beat.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\beat_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\beat_b_v2.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\bells_and_smoke.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\bells_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\bell_a.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\birds.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\blue.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\bop.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\cantor.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\cantor_beat.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\cats_meow.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\cello_waves.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\courtly_dance.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\crazy_thing.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\curved.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\day_brings_down.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\debug.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\disco_flowers.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\disco_flowers_super.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\disco_flowers_super_voice.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\drifting.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\drifting_a.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\drifting_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\earth.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\earth_2.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\earth_3.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\earth_4.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\example.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\falling_into_blue.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\flame.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\flame_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\flat_waves.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\floaty_spaceships.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\for_website.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\four_four.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\frog_signals.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\frog_signals_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\frog_signals_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\getting_lost.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy_6.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy_7_long.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy_c_rhythmic.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy_d_rhythmic.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\glossy_e.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\good_example.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\good_night.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\good_night_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\grass.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\harmonica.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\landing.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\latest.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\lily_pad.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_cello.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_d.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_e.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_f.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_lost.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\meep_meep_short.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\molten.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\more_birds.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\more_birds_test_5.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\more_frogs.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\more_nice_relaxing_beeping_noises.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\more_nice_relaxing_beeping_noises_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\music_box.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\nice_cat.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\nice_ooo.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\night.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\not_that.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\one_to_ten.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\one_to_ten_more.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\ooo_song.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\ooo_song_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\ooo_song_working.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\organ.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\organ_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\panpipes.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\panpipes_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\peace_out.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\pedagogical.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\pedagogical_6.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\percussive_swish.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\place.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\place_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\place_8.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\place_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\pointers.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\psalm9.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\psalm9_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\psalm9_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_a.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_d.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_e.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_f.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_f_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_g.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\random_h.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rhythmic.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rhythmic_7.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rolling_dice.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rushing.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rushing_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rushing_backwards.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\rushing_backwards_again.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\saved.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\seated.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\shiny_floating_trees.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\sierpinsky.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\sky.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\sky_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\sky_7.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\sky_diamonds.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\smooth_4.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something_d.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something_e.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something_f.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\something_g.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\some_rhythm.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\so_much_fun.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\so_much_fun_6.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\stairs.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\stairs_5.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\strange_waves.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\street_sweeper.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\testFractal.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\testing_sample_save.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\test_addition.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\things.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\things_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\this_is_a_test_4.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\this_is_a_test_5.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\this_is_a_test_deep.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\triangle.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\triplet_sierpinsky.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\triplet_sierpinsky_voice.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\twig_march.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\twig_march_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\variation_a.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\vocals_d.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\vocals_working.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\voice.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\voice_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\voice_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\voice_c_sine.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\voice_flyspecks.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\we_will_see.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_b_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_b_7.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_d.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_e.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_f.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_f_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_f_7.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_f_nomax.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_g.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_g_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_h.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_h_final.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_nsv1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_b_raindrops.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_cat.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_cello.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_d.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_e.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_f.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_g.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_h.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_i.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_j.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_k.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_k_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_l.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_m.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_psalm_9.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylophone_squared_why.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\xylopone_j_lawnmower.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\yeah_that.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\yeah_that_window_vocal.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_almostbeeping.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_beat_b_v2.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_cantor_beat.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_drifting.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_drifting_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_drifting_cello_2.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_flame_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_flat_waves.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_frog_signals_breath.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_frog_signals_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_glossy_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_glossy_farm.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_glossy_z.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_place.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_place_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_random_a_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_triangle.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_triangle_1.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_triplet_sierpinsky_voice.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_voice_c.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_b.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_b_breath6.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_b_cello_2.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_b_wish_hard_enough.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_b_wish_it.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_h.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_i.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\presets\_xylophone_j.xml.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\110388__soundscalpel-com__animals-cat-meow-001.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\148633__conleec__misc-int-cat-meowing-001.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\9volt.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\above wilson farm near the highway.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\ahh.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\bass and cello 1.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\bath.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\boomingthing.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\breath1.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\breath2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\breath3.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\breath4.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\breath5.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\breath6.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\car passing and bell.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\cat-conleec-clip.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\cat-meow.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\catch my breath.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\cello 2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\cello bit.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\cello let all mortal flesh.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\chorus.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\click.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\da.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\desperate.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\doremi.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\dreamsong fragment 2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\dreamsong fragment.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\dreamsong.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\dune ambience.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\eep 1.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\eep 2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\eggshell.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\even slightly.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\fiji-meow-02.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\fish tank.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\Flyspecks.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\found.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\freezer.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\glass.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\gong.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\guitar backyard.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\harmonica.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\hello world.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\hypnagogia fragment 2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\hypnagogia fragment.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\kettle on to boil.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\let all mortal flesh.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\meep.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\more computer hum paulstretch.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\more computer hum.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\night chorus.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\nsv1.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\nsv2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\one to ten short.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\one to ten.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\ooo song clip 2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\ooo song clip.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\ooo song.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\peaceful.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\pilot light.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\plainsong.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\psalm 9 erika.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\psalm 9 fragment.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\psalm 9.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\rain drops art installation.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\reflection.mp3.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\rope.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\sitting in the rock garden.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\slow computer hum.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\slow windchimes 2.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\slow windchimes.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\storm drain.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\strange waves clip.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\street sweeper.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\test.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\the sick rose.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\tollway rest stop.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\tripping.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\twig.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\unnamed diddy.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\unsure.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\vocal chords.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\vocal improv.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\vocals.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\watch factory.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\we will see.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\why.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\windchimes.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\window vocal.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\wish hard enough.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\wish it.wav.deploy" />
+    <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\xun.wav.deploy" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SoundLabUI_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fractal\FractalProject.csproj">
+      <Project>{bc3d855f-1d6e-476d-be3b-560c47edd6a7}</Project>
+      <Name>FractalProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoundLabBasics\SoundLabBasics.csproj">
+      <Project>{2a52f905-2389-4838-bd6e-b61de276cbf3}</Project>
+      <Name>SoundLabBasics</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
