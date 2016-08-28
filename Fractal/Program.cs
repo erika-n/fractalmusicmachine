@@ -19,7 +19,6 @@ namespace FractalProject
             stopWatch.Start();
             Console.WriteLine("Running...");
             Fractal fractal = testFractal();
-            //testFractalImages(fractal);
             stopWatch.Stop();
             Console.WriteLine("Elapsed time: " + stopWatch.ElapsedMilliseconds/1000);
             Console.ReadLine();

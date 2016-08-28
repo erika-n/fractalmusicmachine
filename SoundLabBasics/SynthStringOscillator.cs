@@ -60,14 +60,6 @@ namespace SoundLabBasics
 
         private double sineForFrequency(int bufferOffset, double frequency)
         {
-           // double samplesPerOscillation = (SoundUtil.SAMPLE_RATE / frequency);
-            //double depthIntoOscillations = (bufferOffset % samplesPerOscillation) / samplesPerOscillation;
-
-            // Math.sin(bufferoffset)
-            // Math.sin(bufferoffset*2*Math.PI)
-
-
-            //return Math.Sin(depthIntoOscillations * Math.PI * 2 + _offset);
             return Math.Sin(bufferOffset * 2 * Math.PI * frequency/SoundUtil.SAMPLE_RATE);
         }
         public double GetSample(int bufferOffset)

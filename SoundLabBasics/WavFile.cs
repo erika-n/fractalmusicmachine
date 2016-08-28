@@ -68,12 +68,8 @@ namespace SoundLabBasics
         }
 
 
-        /// <summary>
+
         /// Saves data as a wav file at the given sample rate.
-        /// </summary>
-        /// <param name="fileName"></param>
-        /// <param name="sampleData"></param>
-        /// <param name="samplesPerSecond"></param>
         public static void Save(string fileName, SoundBuffer sampleData)
         {
             System.IO.FileStream stream = System.IO.File.Create(fileName);

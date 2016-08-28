@@ -17,10 +17,7 @@ using System.IO;
 namespace SoundLabUI
 {
     public partial class Form1 : Form
-    {
-       // static int TRANSITION_TIME = 3;
-
-        
+    {   
         private WaveForm _waveForm;
         private Fractal _fractal, _buildingFractal;
         private string _soundFile = SoundUtil.SAVE_FOLDER + "\\fractal.wav";
@@ -73,11 +70,6 @@ namespace SoundLabUI
         private void loadFractal()
         {
 
-
-            if (_scoreAnimating|| _transitionAnimating)
-            {
-               //stopAnimation();
-            }
             _fractalStopwatch = new Stopwatch();
             _fractalStopwatch.Start();
 
@@ -353,7 +345,7 @@ namespace SoundLabUI
 
 
            int seconds, depth, minWaves, maxWaves, cutoffHigh, cutoffLow, oscillator;
-           double amplitude, baseFreq;
+           double baseFreq;
            string sampleFile = "", sampleFileName = "";
            if (!System.Int32.TryParse(secondsTextBox.Text, out seconds) || seconds < MIN_SECONDS || seconds > MAX_SECONDS)
            {
@@ -761,252 +753,6 @@ namespace SoundLabUI
            secondsTextBox.Text = "" + _fractalVariables.seconds;
        }
         
-
-
-
-       // crap I accidentally clicked on.
-
-
-       private void label4_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void textBox1_TextChanged_1(object sender, EventArgs e)
-       {
-
-       }
-
-       private void oscillatorComboBox_SelectedIndexChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label14_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void panel6_Paint(object sender, PaintEventArgs e)
-       {
-
-       }
-
-       private void label2_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void textBox1_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void textBox2_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label18_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label11_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label16_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label10_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void presetComboBox_SelectedIndexChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label15_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label8_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label7_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label9_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void f0TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void e0TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void s0TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void s1TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void e1TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void f1TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void f2TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void e2TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void s2TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void s3TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void e3TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void f3TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label1_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void e4TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void s4TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void s5TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void e5TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void f5TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label6_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label3_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void baseFreqTextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void frequencyRangeCheckbox_CheckedChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void cutoffLowTextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label12_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void cutoffHighTextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label13_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void f4TextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label4_Click_1(object sender, EventArgs e)
-       {
-
-       }
-
-       private void label17_Click(object sender, EventArgs e)
-       {
-
-       }
-
-       private void minWavesTextBox_TextChanged(object sender, EventArgs e)
-       {
-
-       }
-
-       private void panel2_Paint(object sender, PaintEventArgs e)
-       {
-
-       }
-
 
 
     }

@@ -40,29 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filter.cs" />
-    <Compile Include="EchoChamber.cs" />
-    <Compile Include="LFO.cs" />
     <Compile Include="NoiseOscillator.cs" />
     <Compile Include="PlayWithHarmonics.cs" />
     <Compile Include="Envelope.cs" />
-    <Compile Include="LSystemAudio.cs" />
-    <Compile Include="Point.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="SampleOscillator.cs" />
     <Compile Include="SawtoothOscillator.cs" />
-    <Compile Include="AudioString.cs" />
     <Compile Include="SynthStringOscillator.cs" />
     <Compile Include="SquareOscillator.cs" />
-    <Compile Include="Experiment1.cs" />
     <Compile Include="IOscillator.cs" />
-    <Compile Include="LSystem.cs" />
-    <Compile Include="LSystemRule.cs" />
     <Compile Include="SineOscillator.cs" />
     <Compile Include="SoundBuffer.cs" />
     <Compile Include="SoundUtil.cs" />
-    <Compile Include="Turtle.cs" />
     <Compile Include="WavFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

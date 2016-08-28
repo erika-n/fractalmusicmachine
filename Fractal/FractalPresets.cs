@@ -195,12 +195,6 @@ namespace FractalProject
                 end = ((int)(r.NextDouble() * factor)) / factor;
             }
 
-            //if (start > end)
-            //{
-           //     double tmp = end;
-           //     end = start;
-           //     start = tmp;
-           // }
             Transformation t = new Transformation(start, end, freqMultiplier, Color.White);
             Debug.WriteLine("t: t.start: {0}, t.end: {1}, t.freq: {2}", t.start, t.end, t.multFrequency);
 

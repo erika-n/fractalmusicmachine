@@ -165,7 +165,6 @@ namespace SoundLabBasics
             double waveLength = SoundUtil.SAMPLE_RATE / freq;
             int minWidth = (int)(minWaves * waveLength);
 
-            //Console.WriteLine("freq = {0}, minWidth = {1}", oscillator.GetFrequency(), minWidth);
             int left = (int)(start * Length);
             int right = Math.Max((int)(end * Length), left + minWidth);
             int maxWidth = right - left;

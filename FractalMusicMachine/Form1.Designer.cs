@@ -155,7 +155,6 @@
             this.label1.Size = new System.Drawing.Size(89, 29);
             this.label1.TabIndex = 5;
             this.label1.Text = "Depth:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // depthTextBox
             // 
@@ -190,7 +189,6 @@
             this.label2.Size = new System.Drawing.Size(122, 29);
             this.label2.TabIndex = 8;
             this.label2.Text = "Seconds:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // secondsTextBox
             // 
@@ -229,7 +227,7 @@
             this.generatedLabel.TabIndex = 12;
             this.generatedLabel.Text = "Generated.";
             this.generatedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.generatedLabel.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // maxWavesTextBox
             // 
@@ -239,7 +237,7 @@
             this.maxWavesTextBox.Size = new System.Drawing.Size(72, 26);
             this.maxWavesTextBox.TabIndex = 16;
             this.maxWavesTextBox.Text = "10";
-            this.maxWavesTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+
             // 
             // label4
             // 
@@ -250,7 +248,6 @@
             this.label4.Size = new System.Drawing.Size(107, 24);
             this.label4.TabIndex = 15;
             this.label4.Text = "Max waves:";
-            this.label4.Click += new System.EventHandler(this.label4_Click_1);
             // 
             // minWavesTextBox
             // 
@@ -260,7 +257,6 @@
             this.minWavesTextBox.Size = new System.Drawing.Size(72, 26);
             this.minWavesTextBox.TabIndex = 14;
             this.minWavesTextBox.Text = "10";
-            this.minWavesTextBox.TextChanged += new System.EventHandler(this.minWavesTextBox_TextChanged);
             // 
             // label5
             // 
@@ -271,7 +267,7 @@
             this.label5.Size = new System.Drawing.Size(104, 24);
             this.label5.TabIndex = 13;
             this.label5.Text = "Min waves:";
-            this.label5.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // depthPlus
             // 
@@ -295,8 +291,7 @@
             this.presetComboBox.Size = new System.Drawing.Size(349, 37);
             this.presetComboBox.TabIndex = 19;
             this.presetComboBox.Text = "latest";
-            this.presetComboBox.SelectedIndexChanged += new System.EventHandler(this.presetComboBox_SelectedIndexChanged);
-            // 
+  // 
             // loadPresetButton
             // 
             this.loadPresetButton.BackColor = System.Drawing.Color.DarkOliveGreen;
@@ -331,7 +326,6 @@
             this.baseFreqTextBox.Size = new System.Drawing.Size(72, 26);
             this.baseFreqTextBox.TabIndex = 23;
             this.baseFreqTextBox.Text = "4";
-            this.baseFreqTextBox.TextChanged += new System.EventHandler(this.baseFreqTextBox_TextChanged);
             // 
             // label6
             // 
@@ -342,7 +336,6 @@
             this.label6.Size = new System.Drawing.Size(155, 24);
             this.label6.TabIndex = 22;
             this.label6.Text = "Frequency factor:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // s0TextBox
             // 
@@ -350,7 +343,6 @@
             this.s0TextBox.Name = "s0TextBox";
             this.s0TextBox.Size = new System.Drawing.Size(59, 26);
             this.s0TextBox.TabIndex = 24;
-            this.s0TextBox.TextChanged += new System.EventHandler(this.s0TextBox_TextChanged);
             // 
             // e0TextBox
             // 
@@ -358,7 +350,6 @@
             this.e0TextBox.Name = "e0TextBox";
             this.e0TextBox.Size = new System.Drawing.Size(59, 26);
             this.e0TextBox.TabIndex = 25;
-            this.e0TextBox.TextChanged += new System.EventHandler(this.e0TextBox_TextChanged);
             // 
             // f0TextBox
             // 
@@ -366,7 +357,6 @@
             this.f0TextBox.Name = "f0TextBox";
             this.f0TextBox.Size = new System.Drawing.Size(59, 26);
             this.f0TextBox.TabIndex = 26;
-            this.f0TextBox.TextChanged += new System.EventHandler(this.f0TextBox_TextChanged);
             // 
             // f1TextBox
             // 
@@ -374,7 +364,6 @@
             this.f1TextBox.Name = "f1TextBox";
             this.f1TextBox.Size = new System.Drawing.Size(59, 26);
             this.f1TextBox.TabIndex = 29;
-            this.f1TextBox.TextChanged += new System.EventHandler(this.f1TextBox_TextChanged);
             // 
             // e1TextBox
             // 
@@ -382,7 +371,7 @@
             this.e1TextBox.Name = "e1TextBox";
             this.e1TextBox.Size = new System.Drawing.Size(59, 26);
             this.e1TextBox.TabIndex = 28;
-            this.e1TextBox.TextChanged += new System.EventHandler(this.e1TextBox_TextChanged);
+
             // 
             // s1TextBox
             // 
@@ -390,7 +379,6 @@
             this.s1TextBox.Name = "s1TextBox";
             this.s1TextBox.Size = new System.Drawing.Size(59, 26);
             this.s1TextBox.TabIndex = 27;
-            this.s1TextBox.TextChanged += new System.EventHandler(this.s1TextBox_TextChanged);
             // 
             // f2TextBox
             // 
@@ -398,7 +386,6 @@
             this.f2TextBox.Name = "f2TextBox";
             this.f2TextBox.Size = new System.Drawing.Size(59, 26);
             this.f2TextBox.TabIndex = 32;
-            this.f2TextBox.TextChanged += new System.EventHandler(this.f2TextBox_TextChanged);
             // 
             // e2TextBox
             // 
@@ -406,7 +393,6 @@
             this.e2TextBox.Name = "e2TextBox";
             this.e2TextBox.Size = new System.Drawing.Size(59, 26);
             this.e2TextBox.TabIndex = 31;
-            this.e2TextBox.TextChanged += new System.EventHandler(this.e2TextBox_TextChanged);
             // 
             // s2TextBox
             // 
@@ -414,7 +400,6 @@
             this.s2TextBox.Name = "s2TextBox";
             this.s2TextBox.Size = new System.Drawing.Size(59, 26);
             this.s2TextBox.TabIndex = 30;
-            this.s2TextBox.TextChanged += new System.EventHandler(this.s2TextBox_TextChanged);
             // 
             // f3TextBox
             // 
@@ -422,7 +407,6 @@
             this.f3TextBox.Name = "f3TextBox";
             this.f3TextBox.Size = new System.Drawing.Size(59, 26);
             this.f3TextBox.TabIndex = 35;
-            this.f3TextBox.TextChanged += new System.EventHandler(this.f3TextBox_TextChanged);
             // 
             // e3TextBox
             // 
@@ -430,7 +414,6 @@
             this.e3TextBox.Name = "e3TextBox";
             this.e3TextBox.Size = new System.Drawing.Size(59, 26);
             this.e3TextBox.TabIndex = 34;
-            this.e3TextBox.TextChanged += new System.EventHandler(this.e3TextBox_TextChanged);
             // 
             // s3TextBox
             // 
@@ -438,7 +421,6 @@
             this.s3TextBox.Name = "s3TextBox";
             this.s3TextBox.Size = new System.Drawing.Size(59, 26);
             this.s3TextBox.TabIndex = 33;
-            this.s3TextBox.TextChanged += new System.EventHandler(this.s3TextBox_TextChanged);
             // 
             // f4TextBox
             // 
@@ -446,7 +428,6 @@
             this.f4TextBox.Name = "f4TextBox";
             this.f4TextBox.Size = new System.Drawing.Size(59, 26);
             this.f4TextBox.TabIndex = 38;
-            this.f4TextBox.TextChanged += new System.EventHandler(this.f4TextBox_TextChanged);
             // 
             // e4TextBox
             // 
@@ -454,7 +435,6 @@
             this.e4TextBox.Name = "e4TextBox";
             this.e4TextBox.Size = new System.Drawing.Size(59, 26);
             this.e4TextBox.TabIndex = 37;
-            this.e4TextBox.TextChanged += new System.EventHandler(this.e4TextBox_TextChanged);
             // 
             // s4TextBox
             // 
@@ -462,7 +442,6 @@
             this.s4TextBox.Name = "s4TextBox";
             this.s4TextBox.Size = new System.Drawing.Size(59, 26);
             this.s4TextBox.TabIndex = 36;
-            this.s4TextBox.TextChanged += new System.EventHandler(this.s4TextBox_TextChanged);
             // 
             // f5TextBox
             // 
@@ -470,7 +449,6 @@
             this.f5TextBox.Name = "f5TextBox";
             this.f5TextBox.Size = new System.Drawing.Size(59, 26);
             this.f5TextBox.TabIndex = 41;
-            this.f5TextBox.TextChanged += new System.EventHandler(this.f5TextBox_TextChanged);
             // 
             // e5TextBox
             // 
@@ -478,7 +456,6 @@
             this.e5TextBox.Name = "e5TextBox";
             this.e5TextBox.Size = new System.Drawing.Size(59, 26);
             this.e5TextBox.TabIndex = 40;
-            this.e5TextBox.TextChanged += new System.EventHandler(this.e5TextBox_TextChanged);
             // 
             // s5TextBox
             // 
@@ -486,7 +463,6 @@
             this.s5TextBox.Name = "s5TextBox";
             this.s5TextBox.Size = new System.Drawing.Size(59, 26);
             this.s5TextBox.TabIndex = 39;
-            this.s5TextBox.TextChanged += new System.EventHandler(this.s5TextBox_TextChanged);
             // 
             // label7
             // 
@@ -497,7 +473,6 @@
             this.label7.Size = new System.Drawing.Size(50, 24);
             this.label7.TabIndex = 42;
             this.label7.Text = "Start";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -508,7 +483,6 @@
             this.label8.Size = new System.Drawing.Size(42, 24);
             this.label8.TabIndex = 43;
             this.label8.Text = "End";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -520,7 +494,6 @@
             this.label9.Size = new System.Drawing.Size(47, 24);
             this.label9.TabIndex = 44;
             this.label9.Text = "Freq";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // exportVideoButton
             // 
@@ -583,8 +556,7 @@
             this.oscillatorComboBox.Name = "oscillatorComboBox";
             this.oscillatorComboBox.Size = new System.Drawing.Size(349, 28);
             this.oscillatorComboBox.TabIndex = 49;
-            this.oscillatorComboBox.SelectedIndexChanged += new System.EventHandler(this.oscillatorComboBox_SelectedIndexChanged);
-            // 
+                      // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -594,7 +566,7 @@
             this.label10.Size = new System.Drawing.Size(149, 36);
             this.label10.TabIndex = 50;
             this.label10.Text = "Oscillator";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+
             // 
             // label11
             // 
@@ -605,7 +577,6 @@
             this.label11.Size = new System.Drawing.Size(102, 29);
             this.label11.TabIndex = 51;
             this.label11.Text = "Sample:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // sampleComboBox
             // 
@@ -629,7 +600,6 @@
             this.frequencyRangeCheckbox.TabIndex = 53;
             this.frequencyRangeCheckbox.Text = "Frequency Range";
             this.frequencyRangeCheckbox.UseVisualStyleBackColor = true;
-            this.frequencyRangeCheckbox.CheckedChanged += new System.EventHandler(this.frequencyRangeCheckbox_CheckedChanged);
             // 
             // cutoffLowTextBox
             // 
@@ -638,7 +608,6 @@
             this.cutoffLowTextBox.Size = new System.Drawing.Size(55, 26);
             this.cutoffLowTextBox.TabIndex = 54;
             this.cutoffLowTextBox.Text = "150";
-            this.cutoffLowTextBox.TextChanged += new System.EventHandler(this.cutoffLowTextBox_TextChanged);
             // 
             // cutoffHighTextBox
             // 
@@ -647,7 +616,6 @@
             this.cutoffHighTextBox.Size = new System.Drawing.Size(51, 26);
             this.cutoffHighTextBox.TabIndex = 55;
             this.cutoffHighTextBox.Text = "8000";
-            this.cutoffHighTextBox.TextChanged += new System.EventHandler(this.cutoffHighTextBox_TextChanged);
             // 
             // label12
             // 
@@ -658,7 +626,6 @@
             this.label12.Size = new System.Drawing.Size(28, 24);
             this.label12.TabIndex = 56;
             this.label12.Text = "to";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -669,7 +636,6 @@
             this.label13.Size = new System.Drawing.Size(30, 24);
             this.label13.TabIndex = 57;
             this.label13.Text = "Hz";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // fractalMakerBackgroundWorker
             // 
@@ -696,7 +662,7 @@
             this.label14.Size = new System.Drawing.Size(192, 36);
             this.label14.TabIndex = 58;
             this.label14.Text = "Load Fractal";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+
             // 
             // loopCheckbox
             // 
@@ -736,7 +702,7 @@
             this.label15.Size = new System.Drawing.Size(98, 36);
             this.label15.TabIndex = 61;
             this.label15.Text = "Notes";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+
             // 
             // label16
             // 
@@ -746,7 +712,6 @@
             this.label16.Size = new System.Drawing.Size(224, 20);
             this.label16.TabIndex = 62;
             this.label16.Text = "(If Sample oscillator is chosen)";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label3
             // 
@@ -757,7 +722,6 @@
             this.label3.Size = new System.Drawing.Size(135, 36);
             this.label3.TabIndex = 63;
             this.label3.Text = "Controls";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label17
             // 
@@ -768,7 +732,6 @@
             this.label17.TabIndex = 64;
             this.label17.Text = "Animation type:";
             this.label17.Visible = false;
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // panel2
             // 
@@ -800,7 +763,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 414);
             this.panel2.TabIndex = 66;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            //this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -892,7 +855,6 @@
             this.label18.Size = new System.Drawing.Size(237, 40);
             this.label18.TabIndex = 71;
             this.label18.Text = "Make Fractal";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // panel6
             // 
@@ -916,7 +878,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(272, 364);
             this.panel6.TabIndex = 70;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label24
             // 
@@ -927,7 +888,6 @@
             this.label24.Size = new System.Drawing.Size(47, 24);
             this.label24.TabIndex = 44;
             this.label24.Text = "Freq";
-            this.label24.Click += new System.EventHandler(this.label9_Click);
             // 
             // label23
             // 
@@ -938,7 +898,6 @@
             this.label23.Size = new System.Drawing.Size(42, 24);
             this.label23.TabIndex = 43;
             this.label23.Text = "End";
-            this.label23.Click += new System.EventHandler(this.label8_Click);
             // 
             // label22
             // 
@@ -949,7 +908,6 @@
             this.label22.Size = new System.Drawing.Size(50, 24);
             this.label22.TabIndex = 42;
             this.label22.Text = "Start";
-            this.label22.Click += new System.EventHandler(this.label7_Click);
             // 
             // Form1
             // 
