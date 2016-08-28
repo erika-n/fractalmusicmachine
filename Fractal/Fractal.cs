@@ -12,7 +12,7 @@ namespace FractalProject
 {
     public class Fractal:IDisposable
     {
-        public const int SINE = 0, SQUARE = 1, SAWTOOTH = 2, PULSE = 3, SAMPLE = 4, SYNTHSTRING = 5, WAVELET = 6;
+        public const int SINE = 0, SQUARE = 1, SAWTOOTH = 2, SAMPLE = 3, SYNTHSTRING = 4, WAVELET = 5;
         
         SoundBuffer _buffer;
         FractalImage _fractalImage;
@@ -27,6 +27,7 @@ namespace FractalProject
         int _minWaves, _maxWaves;
         int _seconds;
         Transformation[] _transformations;
+        private double avgFreq;
 
 
 
@@ -57,10 +58,6 @@ namespace FractalProject
             {
                 _oscillator = new SawtoothOscillator(440, vals.amplitude);
             }
-            else if(vals.oscillator == PULSE)
-            {
-                _oscillator = new PulseOscillator(50, vals.amplitude, 0);
-            }
             else if (vals.oscillator == SAMPLE)
             {
                 _oscillator = new SampleOscillator(SoundUtil.SAMPLES_FOLDER + "\\" + vals.sample + ".wav");
@@ -69,10 +66,6 @@ namespace FractalProject
             else if (vals.oscillator == SYNTHSTRING)
             {
                 _oscillator = new SynthStringOscillator(440, vals.amplitude);
-            }
-            else if (vals.oscillator == WAVELET)
-            {
-                _oscillator = new WaveletOscillator(440, vals.amplitude);
             }
 
             _width = width;
@@ -97,6 +90,8 @@ namespace FractalProject
         {
             FractalStackObject initialObject = new FractalStackObject(_depth, 0, 1, 1, 0, 1, null);
             Stack<FractalStackObject> theStack = new Stack<FractalStackObject>();
+            avgFreq = averageTransformationFrequency(_transformations);
+
             theStack.Push(initialObject);
             return partialStackRun(theStack, steps);
         }
@@ -110,7 +105,7 @@ namespace FractalProject
 
         public Stack<FractalStackObject> partialStackRun(Stack<FractalStackObject> theStack, int howMany)
         {
-            double avgFreq = averageTransformationFrequency(_transformations);
+            
             FractalStackObject thisRun;
             while (howMany > 0 && theStack.Count > 0 )
             {
@@ -123,9 +118,8 @@ namespace FractalProject
                     color = thisRun.parentRect.color;
                 }
                 FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.ymin, thisRun.ymax, thisRun.depth, thisRun.parentRect, finalFreq, color);
-                finalFreq = finalFreq * _baseFreq / (Math.Pow(avgFreq, _depth));
+                finalFreq = finalFreq * _baseFreq/ (Math.Pow(avgFreq, _depth));
                 _fractalImage.add(newRect);
-
                 thisRun.parentRect = newRect;
 
                 if (thisRun.depth == 0)
@@ -134,8 +128,14 @@ namespace FractalProject
 
                     _oscillator.SetFrequency(finalFreq);
                     _buffer.WriteOscillations(_oscillator, thisRun.start, thisRun.end, _envelope, _minWaves, _maxWaves);
+                    if (finalFreq < 0)
+                    {
+                        finalFreq *= -1; // TODO: this is a hack
+                    }
+                    
                     if (finalFreq < FREQ_HIST_MAX)
                     {
+
                         _freqHist[(int)(finalFreq / 100)]++;
                     }
                     else
@@ -240,6 +240,10 @@ namespace FractalProject
             foreach (Transformation t in transformations)
             {
                 returning *= t.multFrequency;
+            }
+            if (returning < 0)
+            {
+                returning *= -1;
             }
             returning = Math.Pow(returning, (1.0 / transformations.Length));
             return returning;

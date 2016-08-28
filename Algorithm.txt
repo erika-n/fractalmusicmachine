@@ -1,31 +1,11 @@
-The actual implementation got a bit messy: here is some pseudocode in pseudolanguage 
-to (hopefully) help understand what is going on. 
+Here is some pseudocode in pseudolanguage to help understand what is going on/aid translation to other languages. 
 
-// Define some note line objects 
+// Define some line objects. These lines represent notes defined over 0-1, where 0-1 can be any length of time you like. 
 lines = [
     {start = 0, end = 0.5, freq =4}, 
     {start = 0.5, end = 1, freq = 3},
     {start = 0.25, end = 0.75, freq = 6}
 ];
-
-
-// Recursively apply the algorithm to them.
-
-function run(line, lines, depth){
-    if(depth <= 0){
-        // When the bottom of the recursion is hit, write out the note to the sound buffer.
-	// writeOscillations should write some sounds of the appropriate scaled frequency to a sound
-        // buffer somewhere. 
-	writeOscillations(line.start, line.end, line.freq);
-    }
-    else{
-        foreach(transform in lines){
-            newline = doTransform(line, transform);
-            run(newline, lines, depth - 1);              
-        }	
-    }
-}
-
 
 
 /// Transform the recursing line via the original lines (linear transformation)
@@ -37,9 +17,30 @@ function doTransform(line, transform){
     newline.start = transform.start*len + line.start;
     newline.end = transform.end*len + line.start;     
       
-    newline.freq = line.freq*transform.freq; // Frequency gets multiplied. Maybe want to think of a better plan.
+    newline.freq = line.freq*transform.freq; // Frequency gets multiplied. Try experimenting with other things!
     return newline;
 }
+
+// Recursively apply the algorithm to them.
+
+function run(line, lines, depth){
+    if(depth <= 0){
+        // When the bottom of the recursion is hit, write out the note to the sound buffer.
+		// writeOscillations should write some sounds of the appropriate scaled frequency to a sound
+        // buffer somewhere. 
+		writeOscillations(line.start, line.end, line.freq);
+    }
+    else{
+        foreach(transform in lines){
+            newline = doTransform(line, transform);
+            run(newline, lines, depth - 1);              
+        }	
+    }
+}
+
+
+
+
  
 
 // Use it like this

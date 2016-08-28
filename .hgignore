@@ -1,0 +1,14 @@
+
+syntax: glob
+
+*.exe
+*.Cache
+*.cache
+*.pdb
+*/bin/*
+TemporaryGeneratedFile*
+*.git*
+*.wav
+Settings/*
+*.dll
+*/obj/*

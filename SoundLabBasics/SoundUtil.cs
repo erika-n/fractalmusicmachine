@@ -9,7 +9,10 @@ namespace SoundLabBasics
     public class SoundUtil
     {
         public const int SAMPLE_RATE = 44100;
-        public const string PRESETS_FOLDER = "C:\\Users\\Erika\\Documents\\Programming\\SoundLab\\Settings\\PRESETS";
-        public const string SAMPLES_FOLDER = "C:\\Users\\Erika\\Documents\\Programming\\SoundLab\\Settings\\sounds";
+        public const string PROGRAM_NAME = "Fractal Music Machine";
+        public static string SAMPLES_FOLDER = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + PROGRAM_NAME + "\\sounds";
+        public static string SAVE_FOLDER = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + PROGRAM_NAME + "\\saved";
+        public static string PRESETS_FOLDER = SAVE_FOLDER;
+       
     }
 }

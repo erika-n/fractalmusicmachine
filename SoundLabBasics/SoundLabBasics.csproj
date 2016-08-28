@@ -50,7 +50,6 @@
     <Compile Include="Point.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="PulseOscillator.cs" />
     <Compile Include="SampleOscillator.cs" />
     <Compile Include="SawtoothOscillator.cs" />
     <Compile Include="AudioString.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="SoundBuffer.cs" />
     <Compile Include="SoundUtil.cs" />
     <Compile Include="Turtle.cs" />
-    <Compile Include="WaveletOscillator.cs" />
     <Compile Include="WavFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

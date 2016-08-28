@@ -49,9 +49,16 @@ namespace SoundLabBasics
         public double[] GetStereoSample(int bufferOffset)
         {
             double[] sample = new double[2];
-            sample[0] =  _amplitude * _soundBuffer.ReadLeft((bufferOffset - _locOffset + _offset) % _soundBuffer.Length);
-            sample[1] =  _amplitude * _soundBuffer.ReadRight((bufferOffset - _locOffset + _offset) % _soundBuffer.Length);
-
+            if (_frequency < 0)
+            {
+                sample[0] = 0;
+                sample[1] = 0;
+            }
+            else
+            {
+                sample[0] = _amplitude * _soundBuffer.ReadLeft((bufferOffset - _locOffset + _offset) % _soundBuffer.Length);
+                sample[1] = _amplitude * _soundBuffer.ReadRight((bufferOffset - _locOffset + _offset) % _soundBuffer.Length);
+            }
             return sample;
         }
 
@@ -64,6 +71,7 @@ namespace SoundLabBasics
         {
             if (frequency < 0)
             {
+                _frequency = frequency;
                 return;
             }
             double freqhash = new Random((int)frequency).NextDouble();

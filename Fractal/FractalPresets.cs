@@ -187,7 +187,7 @@ namespace FractalProject
             int[] freqMultipliers = { 2, 3, 4, 6, 8 };
             double freqMultiplier = freqMultipliers[(int) (_random.NextDouble() * freqMultipliers.Length)];
 
-            double factor = 8;
+            double factor = 4;
             double start = ((int)(r.NextDouble() * factor)) / factor;
             double end = ((int)(r.NextDouble() * factor)) / factor; ;
             while (start == end)

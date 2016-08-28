@@ -16,18 +16,22 @@ namespace FractalProject
         public double multFrequency;
         public Color color;
         public int freqMode = 0;
+        public double addFrequency;
         const int NATURAL = 1, PYTHAGOREAN = 0;
+        private Random random;
 
         public Transformation()
         {
-
+            random = new Random();
         }
 
-        public Transformation(double start, double end, double multFrequency, Color color)
+        public Transformation(double start, double end, double multFrequency, Color color, double addFrequency = 0)
         {
+            random = new Random();
             this.start = start;
             this.end = end;
             this.multFrequency = multFrequency;
+            this.addFrequency = Math.Floor(100 * random.NextDouble());
             this.color = color;
 
         }
@@ -35,9 +39,13 @@ namespace FractalProject
         public double getNewFreq(double freq)
         
         {
+           // freq = freq + addFrequency;
+           //if (freq < 0)
+           // {
+           //     freq += -2*addFrequency;
+           // }
 
             freq = freq * multFrequency;
-            
             return freq; 
         }
 

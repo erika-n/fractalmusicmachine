@@ -118,8 +118,10 @@ namespace SoundLabBasics
 
         public void Add(double[] d, int bufferOffset)
         {
+
             _left[bufferOffset] += d[0];
             _right[bufferOffset] += d[1];
+  
         }
 
         public void Add(double d, int bufferOffset)
@@ -174,11 +176,6 @@ namespace SoundLabBasics
             right = Math.Min(right, left + maxWidth);
             envelope.Start(right - left);
 
-            if (oscillator is PulseOscillator)
-            {
-                PulseOscillator pulseOscillator = (PulseOscillator)oscillator;
-                pulseOscillator.SetOffset(left);
-            }
             if (oscillator is SampleOscillator)
             {
                 SampleOscillator sampleOscillator = (SampleOscillator)oscillator;
@@ -186,11 +183,7 @@ namespace SoundLabBasics
 
             }
 
-            if (oscillator is WaveletOscillator)
-            {
-                WaveletOscillator waveletOscillator = (WaveletOscillator)oscillator;
-                waveletOscillator.PeakAt(left + (right - left)/2, left);
-            }
+
 
             for (int i = left; i < right && i < Length; i++)
             {
