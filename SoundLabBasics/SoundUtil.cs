@@ -11,6 +11,9 @@ namespace SoundLabBasics
         public const int SAMPLE_RATE = 44100;
         public const string PROGRAM_NAME = "Fractal Music Machine";
         public static string SAMPLES_FOLDER = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + PROGRAM_NAME + "\\sounds";
+
+        //public static string SAMPLES_FOLDER = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Programming\\Python\\current\\sounds\\songsinmyhead";
+
         public static string SAVE_FOLDER = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\" + PROGRAM_NAME + "\\saved";
         public static string PRESETS_FOLDER = SAVE_FOLDER;
        

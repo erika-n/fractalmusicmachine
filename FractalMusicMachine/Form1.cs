@@ -37,7 +37,7 @@ namespace SoundLabUI
         private Boolean _starMode = false;
         private const int VIDEO_FRAME_RATE = 30;
         private const int MIN_SECONDS = 1;
-        private const int MAX_SECONDS = 600;
+        private const int MAX_SECONDS = 100000;
 
         public Form1()
         {

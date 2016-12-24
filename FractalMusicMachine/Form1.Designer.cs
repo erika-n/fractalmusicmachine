@@ -227,7 +227,6 @@
             this.generatedLabel.TabIndex = 12;
             this.generatedLabel.Text = "Generated.";
             this.generatedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
             // 
             // maxWavesTextBox
             // 
@@ -237,7 +236,6 @@
             this.maxWavesTextBox.Size = new System.Drawing.Size(72, 26);
             this.maxWavesTextBox.TabIndex = 16;
             this.maxWavesTextBox.Text = "10";
-
             // 
             // label4
             // 
@@ -267,7 +265,6 @@
             this.label5.Size = new System.Drawing.Size(104, 24);
             this.label5.TabIndex = 13;
             this.label5.Text = "Min waves:";
-
             // 
             // depthPlus
             // 
@@ -291,7 +288,7 @@
             this.presetComboBox.Size = new System.Drawing.Size(349, 37);
             this.presetComboBox.TabIndex = 19;
             this.presetComboBox.Text = "latest";
-  // 
+            // 
             // loadPresetButton
             // 
             this.loadPresetButton.BackColor = System.Drawing.Color.DarkOliveGreen;
@@ -371,7 +368,6 @@
             this.e1TextBox.Name = "e1TextBox";
             this.e1TextBox.Size = new System.Drawing.Size(59, 26);
             this.e1TextBox.TabIndex = 28;
-
             // 
             // s1TextBox
             // 
@@ -556,7 +552,7 @@
             this.oscillatorComboBox.Name = "oscillatorComboBox";
             this.oscillatorComboBox.Size = new System.Drawing.Size(349, 28);
             this.oscillatorComboBox.TabIndex = 49;
-                      // 
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -566,7 +562,6 @@
             this.label10.Size = new System.Drawing.Size(149, 36);
             this.label10.TabIndex = 50;
             this.label10.Text = "Oscillator";
-
             // 
             // label11
             // 
@@ -662,7 +657,6 @@
             this.label14.Size = new System.Drawing.Size(192, 36);
             this.label14.TabIndex = 58;
             this.label14.Text = "Load Fractal";
-
             // 
             // loopCheckbox
             // 
@@ -670,13 +664,12 @@
             this.loopCheckbox.Checked = true;
             this.loopCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.loopCheckbox.ForeColor = System.Drawing.Color.Black;
-            this.loopCheckbox.Location = new System.Drawing.Point(830, 742);
+            this.loopCheckbox.Location = new System.Drawing.Point(191, 586);
             this.loopCheckbox.Name = "loopCheckbox";
             this.loopCheckbox.Size = new System.Drawing.Size(71, 24);
             this.loopCheckbox.TabIndex = 59;
             this.loopCheckbox.Text = "Loop";
             this.loopCheckbox.UseVisualStyleBackColor = true;
-            this.loopCheckbox.Visible = false;
             this.loopCheckbox.CheckedChanged += new System.EventHandler(this.loopCheckbox_CheckedChanged);
             // 
             // starModeCheckbox
@@ -684,13 +677,12 @@
             this.starModeCheckbox.AutoSize = true;
             this.starModeCheckbox.BackColor = System.Drawing.Color.Transparent;
             this.starModeCheckbox.ForeColor = System.Drawing.Color.Black;
-            this.starModeCheckbox.Location = new System.Drawing.Point(917, 742);
+            this.starModeCheckbox.Location = new System.Drawing.Point(277, 586);
             this.starModeCheckbox.Name = "starModeCheckbox";
             this.starModeCheckbox.Size = new System.Drawing.Size(82, 24);
             this.starModeCheckbox.TabIndex = 60;
             this.starModeCheckbox.Text = "Circles";
             this.starModeCheckbox.UseVisualStyleBackColor = false;
-            this.starModeCheckbox.Visible = false;
             this.starModeCheckbox.CheckedChanged += new System.EventHandler(this.starModeCheckbox_CheckedChanged);
             // 
             // label15
@@ -702,7 +694,6 @@
             this.label15.Size = new System.Drawing.Size(98, 36);
             this.label15.TabIndex = 61;
             this.label15.Text = "Notes";
-
             // 
             // label16
             // 
@@ -726,12 +717,11 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(823, 708);
+            this.label17.Location = new System.Drawing.Point(67, 590);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(118, 20);
             this.label17.TabIndex = 64;
             this.label17.Text = "Animation type:";
-            this.label17.Visible = false;
             // 
             // panel2
             // 
@@ -763,7 +753,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 414);
             this.panel2.TabIndex = 66;
-            //this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -914,7 +903,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1894, 1061);
+            this.ClientSize = new System.Drawing.Size(1894, 1028);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.starModeCheckbox);
@@ -933,7 +922,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Fractal Music Machine";
+            this.Text = "Fractal Music Machine 1.0.0 (Experimental)";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fractalBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.waveFormBox)).EndInit();

@@ -25,6 +25,7 @@ namespace SoundLabUI
             {
                 Color backgroundColor = Color.Black;
                 Brush brush = new SolidBrush(backgroundColor);
+                g.FillRectangle(new SolidBrush(Color.FromArgb(150, 200, 200, 200)), new Rectangle(0, 0, _image.Width - 1, _image.Height - 1));
                 g.DrawRectangle(new Pen(brush), new Rectangle(0, 0, _image.Width - 1, _image.Height - 1));
 
                 using (Pen p = new Pen(Color.Black))

@@ -17,8 +17,8 @@ Name: "{userdocs}\Fractal Music Machine\sounds"; Flags: uninsneveruninstall
 
 [Files]
 Source: "FractalMusicMachine\bin\Release\*"; DestDir: "{app}"
-Source: "DefaultContent\sounds\*"; DestDir: "{userdocs}\Fractal Music Machine\sounds"; 
-Source: "DefaultContent\presets\*"; DestDir: "{userdocs}\Fractal Music Machine\saved"; 
+Source: "DefaultContent\*"; DestDir: "{userdocs}\Fractal Music Machine"; Flags: recursesubdirs
+
 
 
 [Icons]
