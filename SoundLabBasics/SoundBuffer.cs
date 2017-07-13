@@ -235,7 +235,11 @@ namespace SoundLabBasics
         {
             return _right;
         }
+        public void NormalizeVolume()
+        {
+            Amplify(0.5 / PeakAmp());
 
+        }
         public double PeakAmp()
         {
             int ARR_SIZE = 1;

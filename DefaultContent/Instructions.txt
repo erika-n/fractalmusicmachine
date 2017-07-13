@@ -1,0 +1,23 @@
+Load Fractal:
+
+Load and save fractal parameter files. These hold all the parameters that you can manipulate on this page. When you save the file it also saves a wav file of the sound. These are saved in your "Documents/Fractal Music Machine" folder. 
+
+Notes: 
+
+This is the heart of the program. This allows you to change the base pattern by changing the start and end points of up to six notes, with frequencies in the chosen ratios. This may make the most sense to look at when the depth is at zero, with seconds at about 3. 
+
+Oscillator:
+
+Choose the oscillator. The options are Sine, Square, Sawtooth, and Sample. If you choose sample, you need to choose a wav file to use for sampling. These are located in Documents/Fractal Music Machine/sounds. You can add new wav files to this. If you have problems, note that it may be a bit fussy about the exact format of the wav files (44100 Hz/16 bit should do it). 
+
+Controls:
+
+The frequency can be tuned by the frequency factor. The exact frequencies will change with depth. Frequency range can be turned on to filter out high or low pitches. 
+
+Min waves determines the minimum number of sound waves that are played when a note is played: this is so that bass notes still get heard when the sounds are very fragmented. Max waves again is a maximum on the number of sound waves.
+
+Make Fractal:
+
+Depth is the recursive depth of the fractal-- how many times the pattern repeats itself within itself. Seconds is the number of seconds to play. Press generate to generate the fractal, and press Go to play it. 
+
+

@@ -298,14 +298,17 @@ namespace SoundLabUI
                if (!System.Double.TryParse(startTextBoxes[i].Text, out start) || start > 1 || start < 0)
                {
                    MessageBox.Show("Invalid start parameter: " + startTextBoxes[i].Text);
+                   return null;
                }
                if (!System.Double.TryParse(endTextBoxes[i].Text, out end) || end > 1 || end < 0)
                {
                    MessageBox.Show("Invalid end parameter: " + endTextBoxes[i].Text);
+                   return null;
                }
                if (!System.Double.TryParse(freqTextBoxes[i].Text, out freq) )
                {
                    MessageBox.Show("Invalid frequency parameter: " + freqTextBoxes[i].Text);
+                   return null;
                }
 
                Color c = Color.Gray;
@@ -420,6 +423,10 @@ namespace SoundLabUI
            _fractalVariables.minWaves = minWaves;
            _fractalVariables.baseFreq = baseFreq;
            _fractalVariables.transformations = loadTransformationsFromForm();
+           if (_fractalVariables.transformations == null)
+           {
+               return false;
+           }
            _fractalVariables.oscillator = oscillator;
 
            _fractalVariables.earProtection = frequencyRangeCheckbox.Checked;

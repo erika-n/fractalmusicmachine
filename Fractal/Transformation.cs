@@ -44,6 +44,7 @@ namespace FractalProject
            // {
            //     freq += -2*addFrequency;
            // }
+            //freq = freq * multFrequency + 1;
             freq = freq * multFrequency;
             //freq =freq * freq + (1.0 / multFrequency); 
             //freq = (freq*freq/2.0) + multFrequency;
