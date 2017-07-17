@@ -162,7 +162,7 @@ namespace SoundLabBasics
             }
 
 
-            double waveLength = SoundUtil.SAMPLE_RATE / freq;
+            double waveLength = SoundUtil.SAMPLE_RATE/440;//TMPDEBUG// / freq;
             int minWidth = (int)(minWaves * waveLength);
 
             int left = (int)(start * Length);

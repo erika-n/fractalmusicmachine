@@ -94,6 +94,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.f25TextBox = new System.Windows.Forms.TextBox();
+            this.f24TextBox = new System.Windows.Forms.TextBox();
+            this.f23TextBox = new System.Windows.Forms.TextBox();
+            this.f22TextBox = new System.Windows.Forms.TextBox();
+            this.f21TextBox = new System.Windows.Forms.TextBox();
+            this.f20TextBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -105,6 +112,20 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.sft25TextBox = new System.Windows.Forms.TextBox();
+            this.sft24TextBox = new System.Windows.Forms.TextBox();
+            this.sft23TextBox = new System.Windows.Forms.TextBox();
+            this.sft22TextBox = new System.Windows.Forms.TextBox();
+            this.sft21TextBox = new System.Windows.Forms.TextBox();
+            this.sft20TextBox = new System.Windows.Forms.TextBox();
+            this.sft15TextBox = new System.Windows.Forms.TextBox();
+            this.sft14TextBox = new System.Windows.Forms.TextBox();
+            this.sft13TextBox = new System.Windows.Forms.TextBox();
+            this.sft12TextBox = new System.Windows.Forms.TextBox();
+            this.sft11TextBox = new System.Windows.Forms.TextBox();
+            this.sft10TextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fractalBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waveFormBox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -118,12 +139,13 @@
             // 
             this.fractalBox.BackColor = System.Drawing.Color.Transparent;
             this.fractalBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fractalBox.Location = new System.Drawing.Point(865, 20);
+            this.fractalBox.Location = new System.Drawing.Point(994, 20);
             this.fractalBox.Name = "fractalBox";
-            this.fractalBox.Size = new System.Drawing.Size(934, 831);
+            this.fractalBox.Size = new System.Drawing.Size(805, 831);
             this.fractalBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.fractalBox.TabIndex = 1;
             this.fractalBox.TabStop = false;
+            this.fractalBox.Click += new System.EventHandler(this.fractalBox_Click);
             // 
             // waveFormBox
             // 
@@ -726,6 +748,27 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.sft25TextBox);
+            this.panel2.Controls.Add(this.sft24TextBox);
+            this.panel2.Controls.Add(this.sft23TextBox);
+            this.panel2.Controls.Add(this.sft22TextBox);
+            this.panel2.Controls.Add(this.sft21TextBox);
+            this.panel2.Controls.Add(this.sft20TextBox);
+            this.panel2.Controls.Add(this.sft15TextBox);
+            this.panel2.Controls.Add(this.sft14TextBox);
+            this.panel2.Controls.Add(this.sft13TextBox);
+            this.panel2.Controls.Add(this.sft12TextBox);
+            this.panel2.Controls.Add(this.sft11TextBox);
+            this.panel2.Controls.Add(this.sft10TextBox);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.f25TextBox);
+            this.panel2.Controls.Add(this.f24TextBox);
+            this.panel2.Controls.Add(this.f23TextBox);
+            this.panel2.Controls.Add(this.f22TextBox);
+            this.panel2.Controls.Add(this.f21TextBox);
+            this.panel2.Controls.Add(this.f20TextBox);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.randomButton);
             this.panel2.Controls.Add(this.label9);
@@ -751,8 +794,62 @@
             this.panel2.Controls.Add(this.s0TextBox);
             this.panel2.Location = new System.Drawing.Point(488, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 414);
+            this.panel2.Size = new System.Drawing.Size(500, 424);
             this.panel2.TabIndex = 66;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label19
+            // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(265, 60);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(57, 24);
+            this.label19.TabIndex = 68;
+            this.label19.Text = "Freq2";
+            // 
+            // f25TextBox
+            // 
+            this.f25TextBox.Location = new System.Drawing.Point(263, 307);
+            this.f25TextBox.Name = "f25TextBox";
+            this.f25TextBox.Size = new System.Drawing.Size(59, 26);
+            this.f25TextBox.TabIndex = 67;
+            // 
+            // f24TextBox
+            // 
+            this.f24TextBox.Location = new System.Drawing.Point(263, 263);
+            this.f24TextBox.Name = "f24TextBox";
+            this.f24TextBox.Size = new System.Drawing.Size(59, 26);
+            this.f24TextBox.TabIndex = 66;
+            // 
+            // f23TextBox
+            // 
+            this.f23TextBox.Location = new System.Drawing.Point(263, 219);
+            this.f23TextBox.Name = "f23TextBox";
+            this.f23TextBox.Size = new System.Drawing.Size(59, 26);
+            this.f23TextBox.TabIndex = 65;
+            // 
+            // f22TextBox
+            // 
+            this.f22TextBox.Location = new System.Drawing.Point(263, 175);
+            this.f22TextBox.Name = "f22TextBox";
+            this.f22TextBox.Size = new System.Drawing.Size(59, 26);
+            this.f22TextBox.TabIndex = 64;
+            // 
+            // f21TextBox
+            // 
+            this.f21TextBox.Location = new System.Drawing.Point(263, 131);
+            this.f21TextBox.Name = "f21TextBox";
+            this.f21TextBox.Size = new System.Drawing.Size(59, 26);
+            this.f21TextBox.TabIndex = 63;
+            // 
+            // f20TextBox
+            // 
+            this.f20TextBox.Location = new System.Drawing.Point(263, 87);
+            this.f20TextBox.Name = "f20TextBox";
+            this.f20TextBox.Size = new System.Drawing.Size(59, 26);
+            this.f20TextBox.TabIndex = 62;
             // 
             // panel3
             // 
@@ -898,6 +995,112 @@
             this.label22.TabIndex = 42;
             this.label22.Text = "Start";
             // 
+            // sft25TextBox
+            // 
+            this.sft25TextBox.Location = new System.Drawing.Point(418, 307);
+            this.sft25TextBox.Name = "sft25TextBox";
+            this.sft25TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft25TextBox.TabIndex = 80;
+            // 
+            // sft24TextBox
+            // 
+            this.sft24TextBox.Location = new System.Drawing.Point(418, 263);
+            this.sft24TextBox.Name = "sft24TextBox";
+            this.sft24TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft24TextBox.TabIndex = 79;
+            // 
+            // sft23TextBox
+            // 
+            this.sft23TextBox.Location = new System.Drawing.Point(418, 219);
+            this.sft23TextBox.Name = "sft23TextBox";
+            this.sft23TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft23TextBox.TabIndex = 78;
+            // 
+            // sft22TextBox
+            // 
+            this.sft22TextBox.Location = new System.Drawing.Point(418, 175);
+            this.sft22TextBox.Name = "sft22TextBox";
+            this.sft22TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft22TextBox.TabIndex = 77;
+            // 
+            // sft21TextBox
+            // 
+            this.sft21TextBox.Location = new System.Drawing.Point(418, 131);
+            this.sft21TextBox.Name = "sft21TextBox";
+            this.sft21TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft21TextBox.TabIndex = 76;
+            // 
+            // sft20TextBox
+            // 
+            this.sft20TextBox.Location = new System.Drawing.Point(418, 87);
+            this.sft20TextBox.Name = "sft20TextBox";
+            this.sft20TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft20TextBox.TabIndex = 75;
+            // 
+            // sft15TextBox
+            // 
+            this.sft15TextBox.Location = new System.Drawing.Point(339, 307);
+            this.sft15TextBox.Name = "sft15TextBox";
+            this.sft15TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft15TextBox.TabIndex = 74;
+            // 
+            // sft14TextBox
+            // 
+            this.sft14TextBox.Location = new System.Drawing.Point(339, 263);
+            this.sft14TextBox.Name = "sft14TextBox";
+            this.sft14TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft14TextBox.TabIndex = 73;
+            // 
+            // sft13TextBox
+            // 
+            this.sft13TextBox.Location = new System.Drawing.Point(339, 219);
+            this.sft13TextBox.Name = "sft13TextBox";
+            this.sft13TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft13TextBox.TabIndex = 72;
+            // 
+            // sft12TextBox
+            // 
+            this.sft12TextBox.Location = new System.Drawing.Point(339, 175);
+            this.sft12TextBox.Name = "sft12TextBox";
+            this.sft12TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft12TextBox.TabIndex = 71;
+            // 
+            // sft11TextBox
+            // 
+            this.sft11TextBox.Location = new System.Drawing.Point(339, 131);
+            this.sft11TextBox.Name = "sft11TextBox";
+            this.sft11TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft11TextBox.TabIndex = 70;
+            // 
+            // sft10TextBox
+            // 
+            this.sft10TextBox.Location = new System.Drawing.Point(339, 87);
+            this.sft10TextBox.Name = "sft10TextBox";
+            this.sft10TextBox.Size = new System.Drawing.Size(59, 26);
+            this.sft10TextBox.TabIndex = 69;
+            // 
+            // label20
+            // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(337, 60);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(52, 24);
+            this.label20.TabIndex = 81;
+            this.label20.Text = "Soft1";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(420, 60);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(52, 24);
+            this.label21.TabIndex = 82;
+            this.label21.Text = "Soft2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1019,6 +1222,27 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox f25TextBox;
+        private System.Windows.Forms.TextBox f24TextBox;
+        private System.Windows.Forms.TextBox f23TextBox;
+        private System.Windows.Forms.TextBox f22TextBox;
+        private System.Windows.Forms.TextBox f21TextBox;
+        private System.Windows.Forms.TextBox f20TextBox;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox sft25TextBox;
+        private System.Windows.Forms.TextBox sft24TextBox;
+        private System.Windows.Forms.TextBox sft23TextBox;
+        private System.Windows.Forms.TextBox sft22TextBox;
+        private System.Windows.Forms.TextBox sft21TextBox;
+        private System.Windows.Forms.TextBox sft20TextBox;
+        private System.Windows.Forms.TextBox sft15TextBox;
+        private System.Windows.Forms.TextBox sft14TextBox;
+        private System.Windows.Forms.TextBox sft13TextBox;
+        private System.Windows.Forms.TextBox sft12TextBox;
+        private System.Windows.Forms.TextBox sft11TextBox;
+        private System.Windows.Forms.TextBox sft10TextBox;
     }
 }
 

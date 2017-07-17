@@ -88,7 +88,7 @@ namespace FractalProject
 
         public Stack<FractalStackObject> run(int steps)
         {
-            FractalStackObject initialObject = new FractalStackObject(_depth, 0, 1, 1, 0, 1, null);
+            FractalStackObject initialObject = new FractalStackObject(_depth, 0, 1, 0, 0, 1, null, 1);
             Stack<FractalStackObject> theStack = new Stack<FractalStackObject>();
             avgFreq = averageTransformationFrequency(_transformations);
 
@@ -110,15 +110,15 @@ namespace FractalProject
             while (howMany > 0 && theStack.Count > 0 )
             {
                 thisRun = theStack.Pop();
-                double finalFreq = thisRun.freq;
+                //double finalFreq = thisRun.freq;
                 
                 Color color = Color.White;
                 if (thisRun.parentRect != null)
                 {
                     color = thisRun.parentRect.color;
                 }
-                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.ymin, thisRun.ymax, thisRun.depth, thisRun.parentRect, finalFreq, color);
-                finalFreq = finalFreq * _baseFreq/ (Math.Pow(avgFreq, _depth));
+                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.freq, thisRun.freq + 0.01, thisRun.depth, thisRun.parentRect, thisRun.freq, color, (thisRun.soft1 + thisRun.soft2)/2);
+                //finalFreq = finalFreq * _baseFreq/ (Math.Pow(avgFreq, _depth));
                 _fractalImage.add(newRect);
                 thisRun.parentRect = newRect;
 
@@ -126,22 +126,23 @@ namespace FractalProject
                 {
                     howMany--;
 
-                    _oscillator.SetFrequency(finalFreq);
+                    _oscillator.SetFrequency((thisRun.freq + thisRun.freq2)/2);
+                    _oscillator.SetAmplitude((thisRun.soft2 + thisRun.soft1)/2);
                     _buffer.WriteOscillations(_oscillator, thisRun.start, thisRun.end, _envelope, _minWaves, _maxWaves);
-                    if (finalFreq < 0)
-                    {
-                        finalFreq *= -1; // TODO: this is a hack
-                    }
+                    //if (finalFreq < 0)
+                    //{
+                    //    finalFreq *= -1; // TODO: this is a hack
+                    //}
                     
-                    if (finalFreq < FREQ_HIST_MAX)
-                    {
+                    //if (finalFreq < FREQ_HIST_MAX)
+                    //{
 
-                        _freqHist[(int)(finalFreq / 100)]++;
-                    }
-                    else
-                    {
-                        _freqHist[_freqHist.Length - 1]++;
-                    }
+                    //    _freqHist[(int)(finalFreq / 100)]++;
+                    //}
+                    //else
+                    //{
+                    //    _freqHist[_freqHist.Length - 1]++;
+                    //}
                 }
                 else
                 {
@@ -152,17 +153,28 @@ namespace FractalProject
 
                     foreach (Transformation t in _transformations)
                     {
-                        double length = thisRun.end - thisRun.start;
-
+                       // double length = thisRun.end - thisRun.start;
+                        
                         FractalRect newParent = thisRun.parentRect.Clone();
                         newParent.color = t.color;
-                        theStack.Push(new FractalStackObject(thisRun.depth - 1, thisRun.start + length * t.start, thisRun.start + length * t.end, t.getNewFreq(thisRun.freq), newymin, newymax, newParent));
+                        //theStack.Push(new FractalStackObject(thisRun.depth - 1, thisRun.start + length * t.start, thisRun.start + length * t.end, t.getNewFreq(thisRun.freq, thisRun.freq2), newymin, newymax, newParent));
+                        //double[,] newVals = t.getNewVals(new double[,]{{thisRun.start, thisRun.freq, 1}});
+                        double[] newLocs = t.getNewVals(thisRun.start, thisRun.end);
+                        double[] newFreqs = t.getNewFreqs(thisRun.freq, thisRun.freq2);
+                        double[] newSofts = t.getNewSofts(thisRun.soft1, thisRun.soft2);
+                        
+
+
+
+                        theStack.Push(new FractalStackObject(thisRun.depth - 1, newLocs[0], newLocs[1], newFreqs[0], newymin, newymax, newParent, newFreqs[1], newSofts[0], newSofts[1]));
+                        //theStack.Push(new FractalStackObject(thisRun.depth - 1, newVals[0,0], thisRun.end, newVals[0, 1], newymin, newymax, newParent, thisRun.freq2, thisRun.soft1, thisRun.soft2));
+
                         newymin += ystep;
                         newymax += ystep;
                     }
                 }
 
-
+                
             }
 
             return theStack;
@@ -259,18 +271,20 @@ namespace FractalProject
     public class FractalStackObject
     {
         public int depth;
-        public double start, end, freq, ymin, ymax;
+        public double start, end, freq, ymin, ymax, freq2, soft1, soft2;
         public FractalRect parentRect;
-        public FractalStackObject(int depth, double start, double end, double freq, double ymin, double ymax, FractalRect parentRect)
+        public FractalStackObject(int depth, double start, double end, double freq, double ymin, double ymax, FractalRect parentRect, double freq2 = 0, double soft1 = 0, double soft2 = 1)
         {
             this.depth = depth;
             this.start = start;
             this.end = end;
             this.freq = freq;
+            this.freq2 = freq2;
             this.ymax = ymax;
             this.ymin = ymin;
             this.parentRect = parentRect;
-
+            this.soft1 = soft1;
+            this.soft2 = soft2;
         }
 
 

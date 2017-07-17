@@ -64,6 +64,7 @@ namespace SoundLabBasics
 
         public void Reset(int bufferOffset)
         {
+
             _locOffset = bufferOffset;
         }
 
@@ -75,8 +76,11 @@ namespace SoundLabBasics
                 return;
             }
             double freqhash = new Random((int)frequency).NextDouble();
-            _offset = (int)(freqhash*(double)_soundBuffer.Length) % (_soundBuffer.Length - 2*SUPPRESS_ENDS) + SUPPRESS_ENDS;
-            Debug.WriteLine("_offset = " + _offset + " out of " + _soundBuffer.Length);
+
+            double baseFreq = frequency * (double)(_soundBuffer.Length - 2*SUPPRESS_ENDS); ///freqhash*(double)_soundBuffer.Length;
+
+            _offset = (int)baseFreq + SUPPRESS_ENDS;//(int)baseFreq % (_soundBuffer.Length - 2*SUPPRESS_ENDS) + SUPPRESS_ENDS;
+            Debug.WriteLine("freq = " + frequency + " _offset = " + _offset + " out of " + _soundBuffer.Length);
             if (_offset < 0)
             {
                 Debug.WriteLine("wtf _offset = " + _offset);

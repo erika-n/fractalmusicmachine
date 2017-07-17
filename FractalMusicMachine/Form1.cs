@@ -157,7 +157,7 @@ namespace SoundLabUI
                 stopAnimation(false);
                 fractalBox.Image = _fractalBitmap;
             }
-            Debug.Write(_buildingFractal.frequencyHist());
+            //Debug.Write(_buildingFractal.frequencyHist());
             goButton.Text = "Generate";
 
             Fractal oldFractal = _fractal;
@@ -204,11 +204,19 @@ namespace SoundLabUI
             TextBox[] startTextBoxes = { s0TextBox, s1TextBox, s2TextBox, s3TextBox, s4TextBox, s5TextBox };
             TextBox[] endTextBoxes = { e0TextBox, e1TextBox, e2TextBox, e3TextBox, e4TextBox, e5TextBox };
             TextBox[] frequencyTextBoxes = { f0TextBox, f1TextBox, f2TextBox, f3TextBox, f4TextBox, f5TextBox};
+            TextBox[] frequency2TextBoxes = { f20TextBox, f21TextBox, f22TextBox, f23TextBox, f24TextBox, f25TextBox };
+            TextBox[] soft1TextBoxes = { sft10TextBox, sft11TextBox, sft12TextBox, sft13TextBox, sft14TextBox, sft15TextBox };
+            TextBox[] soft2TextBoxes = { sft20TextBox, sft21TextBox, sft22TextBox, sft23TextBox, sft24TextBox, sft25TextBox };
+                   
+
             for (int i = 0; i < 6; i++)
             {
                 startTextBoxes[i].Text = "";
                 endTextBoxes[i].Text = "" ;
                 frequencyTextBoxes[i].Text = "";
+                frequency2TextBoxes[i].Text = "";
+                soft1TextBoxes[i].Text = "";
+                soft2TextBoxes[i].Text = "";
             } 
             
             for (int i = 0; i < 6 && i < transformations.Length; i++)
@@ -216,6 +224,9 @@ namespace SoundLabUI
                 startTextBoxes[i].Text = "" + transformations[i].start;
                 endTextBoxes[i].Text = "" + transformations[i].end;
                 frequencyTextBoxes[i].Text = "" + transformations[i].multFrequency;
+                frequency2TextBoxes[i].Text = "" + transformations[i].addFrequency;
+                soft1TextBoxes[i].Text = "" + transformations[i].soft1;
+                soft2TextBoxes[i].Text = "" + transformations[i].soft2;
             }
         }
 
@@ -280,6 +291,11 @@ namespace SoundLabUI
            TextBox[] startTextBoxes = { s0TextBox, s1TextBox, s2TextBox, s3TextBox, s4TextBox, s5TextBox };
            TextBox[] endTextBoxes = { e0TextBox, e1TextBox, e2TextBox, e3TextBox, e4TextBox, e5TextBox };
            TextBox[] freqTextBoxes = { f0TextBox, f1TextBox, f2TextBox, f3TextBox, f4TextBox, f5TextBox };
+           TextBox[] freq2TextBoxes = { f20TextBox, f21TextBox, f22TextBox, f23TextBox, f24TextBox, f25TextBox };
+           TextBox[] soft1TextBoxes = { sft10TextBox, sft11TextBox, sft12TextBox, sft13TextBox, sft14TextBox, sft15TextBox };
+           TextBox[] soft2TextBoxes = { sft20TextBox, sft21TextBox, sft22TextBox, sft23TextBox, sft24TextBox, sft25TextBox };
+          
+
 
            int i = 0;
            for (; i < 6;i++ ){
@@ -294,13 +310,13 @@ namespace SoundLabUI
            for (i = 0; i < transformations.Length; i++)
            {
                
-               double start, end, freq;
-               if (!System.Double.TryParse(startTextBoxes[i].Text, out start) || start > 1 || start < 0)
+               double start, end, freq, freq2, soft1, soft2;
+               if (!System.Double.TryParse(startTextBoxes[i].Text, out start)  )
                {
                    MessageBox.Show("Invalid start parameter: " + startTextBoxes[i].Text);
                    return null;
                }
-               if (!System.Double.TryParse(endTextBoxes[i].Text, out end) || end > 1 || end < 0)
+               if (!System.Double.TryParse(endTextBoxes[i].Text, out end) )
                {
                    MessageBox.Show("Invalid end parameter: " + endTextBoxes[i].Text);
                    return null;
@@ -310,6 +326,25 @@ namespace SoundLabUI
                    MessageBox.Show("Invalid frequency parameter: " + freqTextBoxes[i].Text);
                    return null;
                }
+
+               if (!System.Double.TryParse(freq2TextBoxes[i].Text, out freq2))
+               {
+                   MessageBox.Show("Invalid frequency 2 parameter: " + freq2TextBoxes[i].Text);
+                   return null;
+               }
+
+               if (!System.Double.TryParse(soft1TextBoxes[i].Text, out soft1))
+               {
+                   MessageBox.Show("Invalid frequency 2 parameter: " + soft1TextBoxes[i].Text);
+                   return null;
+               }
+
+               if (!System.Double.TryParse(soft2TextBoxes[i].Text, out soft2))
+               {
+                   MessageBox.Show("Invalid frequency 2 parameter: " + soft2TextBoxes[i].Text);
+                   return null;
+               }
+
 
                Color c = Color.Gray;
                if (i == 0)
@@ -337,7 +372,7 @@ namespace SoundLabUI
                    c = Color.FromArgb(255, 0x33, 0x00, 0x99);
                }
                 
-               transformations[i] = new Transformation(start, end, freq, c);
+               transformations[i] = new Transformation(start, end, freq, c, freq2, soft1, soft2);
            }
 
            return transformations;
@@ -758,6 +793,16 @@ namespace SoundLabUI
                _fractalVariables.seconds = MIN_SECONDS;
            }
            secondsTextBox.Text = "" + _fractalVariables.seconds;
+       }
+
+       private void panel2_Paint(object sender, PaintEventArgs e)
+       {
+
+       }
+
+       private void fractalBox_Click(object sender, EventArgs e)
+       {
+
        }
         
 

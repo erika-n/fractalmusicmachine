@@ -49,8 +49,8 @@ namespace FractalProject
        // Hazy blue theme
        private static Color BACKGROUND = Color.White;
        private static Color FOREGROUND = Color.FromArgb(255, 30, 30, 255);
-       private static Color GRADIENT1 = Color.FromArgb(200, 0, 33, 200);
-       private static Color GRADIENT2 = Color.FromArgb(0, 255, 255, 255);
+       private static Color GRADIENT1 = Color.FromArgb(120, Color.Gray);//Color.FromArgb(200, 0, 33, 200);
+       private static Color GRADIENT2 = Color.FromArgb(0, Color.LightGray);//Color.FromArgb(0, 255, 255, 255);
 
 
 
@@ -321,14 +321,16 @@ namespace FractalProject
                 {
                     highlight = true;
                 }
-
+                Color myColor =  Color.FromArgb((int)(255*(fr.soft)), Color.Firebrick);
                 if (fr.depth == 1)
                 {
-                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, false, 0, maxFreq, minFreq, image, Color.FromArgb((int)(255*(1-percent)), fr.color));
+                    //draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, false, 0, maxFreq, minFreq, image, Color.FromArgb((int)(255*(1-percent)), fr.color));
+                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, false, 0, maxFreq, minFreq, image,myColor);
+                
                 }
                 else if (fr.depth == 0)
                 {
-                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, highlight, 0, maxFreq, minFreq, image, fr.color, Math.Abs(percent-fr.start)/(fr.end - fr.start));
+                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, highlight, 0, maxFreq, minFreq, image, myColor, Math.Abs(percent-fr.start)/(fr.end - fr.start));
                 }
             }
             return image;
@@ -403,8 +405,8 @@ namespace FractalProject
                     toHighlight = (Math.Abs(time - fr.start) < 0.0001 || (time > fr.start && time < fr.end));
                     double peakTime = fr.start + (fr.end - fr.start) / 2;
                     double starTime = time > peakTime ? Math.Abs(time - fr.end) / (fr.end - fr.start) : Math.Abs(time - fr.start) / (fr.end - fr.start);
-   
-                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, toHighlight, 0, maxFreq, minFreq, image, fr.color, starTime, maxDepth);       
+                    Color myColor = Color.FromArgb((int)(255 * (fr.soft)), Color.Firebrick);
+                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, toHighlight, 0, maxFreq, minFreq, image, myColor, starTime, maxDepth);       
                 }
             }
             if (time < 0)
@@ -478,12 +480,12 @@ namespace FractalProject
 
     public class FractalRect
     {
-        public double start, end, ymin, ymax, freq;
+        public double start, end, ymin, ymax, freq, soft;
         public int depth;
         public FractalRect parent;
         public Color color;
 
-        public FractalRect(double start, double end, double ymin, double ymax, int depth, FractalRect parent, double freq, Color color){
+        public FractalRect(double start, double end, double ymin, double ymax, int depth, FractalRect parent, double freq, Color color, double soft){
             if (start > end)
             {
                 double tmp = end;
@@ -500,12 +502,13 @@ namespace FractalProject
             this.depth = depth;
             this.parent = parent;
             this.freq = freq;
+            this.soft = soft;
 
         }
 
         public FractalRect Clone()
         {
-            return new FractalRect(this.start, this.end, this.ymin, this.ymax, this.depth, this.parent, this.freq, this.color);
+            return new FractalRect(this.start, this.end, this.ymin, this.ymax, this.depth, this.parent, this.freq, this.color, this.soft);
         }
 
     }

@@ -184,24 +184,28 @@ namespace FractalProject
         public static Transformation randomTransformation()
         {
             Random r = _random;
-            int[] freqMultipliers = { 2, 3, 4, 6, 8 };
-            double freqMultiplier = freqMultipliers[(int) (_random.NextDouble() * freqMultipliers.Length)];
+            //int[] freqMultipliers = { 2, 3, 4, 6, 8 };
+            //double freqMultiplier = freqMultipliers[(int) (_random.NextDouble() * freqMultipliers.Length)];
 
-            double factor = 4;
-            double start = ((int)(r.NextDouble() * factor)) / factor;
-            double end = ((int)(r.NextDouble() * factor)) / factor; ;
-            while (start == end)
-            {
-                end = ((int)(r.NextDouble() * factor)) / factor;
-            }
+            //double factor = 4;
+            //double start = ((int)(r.NextDouble() * factor)) / factor;
+            //double end = ((int)(r.NextDouble() * factor)) / factor; ;
+            //while (start == end)
+            //{
+            //    end = ((int)(r.NextDouble() * factor)) / factor;
+            //}
 
-            Transformation t = new Transformation(start, end, freqMultiplier, Color.White);
-            Debug.WriteLine("t: t.start: {0}, t.end: {1}, t.freq: {2}", t.start, t.end, t.multFrequency);
-
+            //Transformation t = new Transformation(start, end, freqMultiplier, Color.White);
+            //Debug.WriteLine("t: t.start: {0}, t.end: {1}, t.freq: {2}", t.start, t.end, t.multFrequency);
+            Transformation t = new Transformation(getRandom(), getRandom(), getRandom() , Color.White, getRandom(), getRandom(), getRandom());
             return t;
         }
 
-
+        private static double getRandom()
+        {
+            return (double) _random.Next(0, 4) / 4;
+        }
+        
 
 
     }
