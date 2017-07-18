@@ -110,14 +110,15 @@ namespace FractalProject
             while (howMany > 0 && theStack.Count > 0 )
             {
                 thisRun = theStack.Pop();
-                //double finalFreq = thisRun.freq;
+                double finalFreq = (thisRun.freq + thisRun.freq2)/2;
+                double finalSoft = (thisRun.soft1 + thisRun.soft2) / 2;
                 
                 Color color = Color.White;
                 if (thisRun.parentRect != null)
                 {
                     color = thisRun.parentRect.color;
                 }
-                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.freq, thisRun.freq + 0.01, thisRun.depth, thisRun.parentRect, thisRun.freq, color, (thisRun.soft1 + thisRun.soft2)/2);
+                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, finalFreq, finalFreq + 0.01, thisRun.depth, thisRun.parentRect, thisRun.freq, color, finalSoft);
                 //finalFreq = finalFreq * _baseFreq/ (Math.Pow(avgFreq, _depth));
                 _fractalImage.add(newRect);
                 thisRun.parentRect = newRect;
@@ -126,8 +127,8 @@ namespace FractalProject
                 {
                     howMany--;
 
-                    _oscillator.SetFrequency((thisRun.freq + thisRun.freq2)/2);
-                    _oscillator.SetAmplitude((thisRun.soft2 + thisRun.soft1)/2);
+                    _oscillator.SetFrequency(finalFreq);
+                    _oscillator.SetAmplitude(finalSoft);
                     _buffer.WriteOscillations(_oscillator, thisRun.start, thisRun.end, _envelope, _minWaves, _maxWaves);
                     //if (finalFreq < 0)
                     //{
