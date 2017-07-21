@@ -65,6 +65,7 @@ namespace FractalProject
        public const int TRANSITION = 1;
 
         private static Color BOX_HIGHLIGHT = HIGHLIGHT;
+        private string _svg; 
 
         public FractalImage(int width, int height, double baseFrequency)
         {
@@ -121,8 +122,23 @@ namespace FractalProject
             _score.Insert(scoreIndex, newRect);
         }
 
-        public void draw(double start, double end, double ymin, double ymax, double freq, Boolean filled, double ypercent, double maxFreq, double minFreq, Bitmap image, Color color, double time=0, int depth = 1)
+        public void draw(double start, double end, double ymin, double ymax, double freq, Boolean filled, double ypercent, double maxFreq, double minFreq, Bitmap image, Color color, double time=0, int depth = 1, Boolean svg = false)
         {
+
+            double svgwidth = 1000;
+            double svgheight = 1000;
+
+            if (svg)
+            {
+                _svg += "<rect x=\"" + (int)(start * svgwidth)
+                    + "\" y=\"" + (int)(ymin * svgheight)
+                    + "\" width=\"" + (int)((end-start) * svgheight)
+                    + "\" height=\"" + (int)((ymax-ymin) * svgheight)
+                    + "\" stroke=\"black\" stroke-width=\"" + PEN_WIDTH
+                    + "\" stroke-opacity=\"" + ((double)color.A / 255)
+                    + "\" />\n";
+            }
+
 
             double yloc = ymin + (ymax - ymin) * ypercent;
             double ylocmax = ymax + (ymax - ymin) * ypercent;
@@ -246,7 +262,7 @@ namespace FractalProject
                     else {
                         g.DrawLine(p, x1, y1, x2, y2);
                     }
-
+                    
                 }
 
 
@@ -370,6 +386,8 @@ namespace FractalProject
 
         public Bitmap animateScoreSpecific(double time, int maxDepth, int width, int height)
         {
+    
+
             if (time < 0 && _stillImage != null) 
             {
                 return new Bitmap(_stillImage);
@@ -377,6 +395,16 @@ namespace FractalProject
             if(time > -1 && (maxDepth > MAX_ANIMATE_DEPTH)){
                 return quickAnimateScore(time, maxDepth);
             }
+
+            Boolean svg = false;
+            if (time < 0)
+            {
+                svg = true;
+                // if this is the first time through, create svg file
+                _svg = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
+                _svg += "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n";
+            }
+
 
             Bitmap image = new Bitmap(width, height); //_image;
             Boolean toHighlight;
@@ -406,14 +434,23 @@ namespace FractalProject
                     double peakTime = fr.start + (fr.end - fr.start) / 2;
                     double starTime = time > peakTime ? Math.Abs(time - fr.end) / (fr.end - fr.start) : Math.Abs(time - fr.start) / (fr.end - fr.start);
                     Color myColor = Color.FromArgb((int)(255 * (fr.soft)), Color.Firebrick);
-                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, toHighlight, 0, maxFreq, minFreq, image, myColor, starTime, maxDepth);       
+                    draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, toHighlight, 0, maxFreq, minFreq, image, myColor, starTime, maxDepth, svg);       
                 }
             }
             if (time < 0)
             {
                 _stillImage = image;
+                _svg += "</svg>\n";
+                
             }
             return image;
+        }
+
+        public void saveAsSVG(string fileName)
+        {
+            System.IO.StreamWriter file = new System.IO.StreamWriter(fileName);
+            file.Write(_svg);
+            file.Close();
         }
 
 

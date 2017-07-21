@@ -118,7 +118,7 @@ namespace FractalProject
                 {
                     color = thisRun.parentRect.color;
                 }
-                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, finalFreq, finalFreq + 0.01, thisRun.depth, thisRun.parentRect, thisRun.freq, color, finalSoft);
+                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.freq, thisRun.freq2, thisRun.depth, thisRun.parentRect, thisRun.freq, color, finalSoft);
                 //finalFreq = finalFreq * _baseFreq/ (Math.Pow(avgFreq, _depth));
                 _fractalImage.add(newRect);
                 thisRun.parentRect = newRect;
@@ -267,6 +267,11 @@ namespace FractalProject
             _fractalImage.setStarMode(starMode);
         }
 
+
+        public void saveAsSVG(string fileName)
+        {
+            _fractalImage.saveAsSVG(fileName);
+        }
 
     }
     public class FractalStackObject

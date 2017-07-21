@@ -661,6 +661,7 @@ namespace SoundLabUI
            }
            FractalPresets.Save(_fractalVariables, fileName);
            WavFile.Save(SoundUtil.SAVE_FOLDER + "\\" + fileName + ".wav", _fractal.getSound());
+           _fractal.saveAsSVG(SoundUtil.SAVE_FOLDER + "\\" + fileName + ".svg");
            presetComboBox.Items.Add(fileName);
          
        }
