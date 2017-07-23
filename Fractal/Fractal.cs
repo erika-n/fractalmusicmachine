@@ -110,7 +110,13 @@ namespace FractalProject
             while (howMany > 0 && theStack.Count > 0 )
             {
                 thisRun = theStack.Pop();
+
+
                 double finalFreq = (thisRun.freq + thisRun.freq2)/2;
+
+                if(! (_oscillator is SampleOscillator) ){
+                    finalFreq = 400 * Math.Log(finalFreq);
+                }
                 double finalSoft = (thisRun.soft1 + thisRun.soft2) / 2;
                 
                 Color color = Color.White;
@@ -164,6 +170,7 @@ namespace FractalProject
                         double[] newFreqs = t.getNewFreqs(thisRun.freq, thisRun.freq2);
                         double[] newSofts = t.getNewSofts(thisRun.soft1, thisRun.soft2);
                         
+
 
 
 
