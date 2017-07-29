@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.IO;
 
 namespace SoundLabBasics
 {
@@ -67,8 +69,6 @@ namespace SoundLabBasics
             return new SoundBuffer(left, right);
         }
 
-
-
         /// Saves data as a wav file at the given sample rate.
         public static void Save(string fileName, SoundBuffer sampleData)
         {
@@ -111,6 +111,10 @@ namespace SoundLabBasics
             bool isMono = sampleData.Mono;
             for (int i = 0; i < sampleData.Length; i++)
             {
+                if (i % 4410000 == 0)
+                {
+                    Debug.WriteLine("Output wave " + fileName + " sample " + i + " out of " + sampleData.Length);
+                }
                 sl = (short)(30000*left[i]);
                 if (isMono)
                 {

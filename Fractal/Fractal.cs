@@ -102,6 +102,11 @@ namespace FractalProject
             return (int)Math.Pow(_transformations.Length, _depth);
         }
 
+        private static string ToBin(int value, int len)
+        {
+            return (len > 1 ? ToBin(value >> 1, len - 1) : null) + "01"[value & 1];
+        }
+
 
         public Stack<FractalStackObject> partialStackRun(Stack<FractalStackObject> theStack, int howMany)
         {
@@ -112,25 +117,55 @@ namespace FractalProject
                 thisRun = theStack.Pop();
 
 
-                double finalFreq = (thisRun.freq + thisRun.freq2)/2;
+                double finalFreq = (thisRun.freq  + thisRun.freq2)/2;
 
-                if(! (_oscillator is SampleOscillator) ){
-                    finalFreq = 400 * Math.Log(finalFreq);
-                }
-                double finalSoft = (thisRun.soft1 + thisRun.soft2) / 2;
+   
+
+                double finalSoft =  (thisRun.soft1 + thisRun.soft2) / 2;
                 
-                Color color = Color.White;
-                if (thisRun.parentRect != null)
-                {
-                    color = thisRun.parentRect.color;
-                }
-                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.freq, thisRun.freq2, thisRun.depth, thisRun.parentRect, thisRun.freq, color, finalSoft);
-                //finalFreq = finalFreq * _baseFreq/ (Math.Pow(avgFreq, _depth));
+                Color color = Color.Firebrick;
+//                if (thisRun.parentRect != null)
+//                {
+//                    color = thisRun.parentRect.color;
+//                }
+                FractalRect newRect = new FractalRect(thisRun.start, thisRun.end, thisRun.freq, thisRun.freq2, thisRun.depth, thisRun.parentRect, finalFreq, color, finalSoft);
+                
                 _fractalImage.add(newRect);
                 thisRun.parentRect = newRect;
+                
+
+
+
+
 
                 if (thisRun.depth == 0)
                 {
+                    if (!(_oscillator is SampleOscillator))
+                    {
+                        double totalFreq = 1;
+                        int multiplier = (int)Math.Pow(10.0, (double)_depth);
+
+
+                        string binary = ToBin((int)(multiplier * finalFreq), _depth);
+                        for (int d = 0; d < _depth; d++)
+                        {
+                            if (binary[d] == '1')
+                            {
+                                totalFreq *= 2;
+                            }
+                            else
+                            {
+                                totalFreq *= 3;
+                            }
+                        }
+                        totalFreq /= Math.Pow(2.0, _depth);
+                        totalFreq *= 100;
+                        finalFreq = totalFreq;
+                        finalFreq = finalFreq * _baseFreq / (Math.Pow(avgFreq, _depth));      
+                    }
+
+                    Debug.WriteLine("final freq = " + finalFreq);
+
                     howMany--;
 
                     _oscillator.SetFrequency(finalFreq);
@@ -140,16 +175,16 @@ namespace FractalProject
                     //{
                     //    finalFreq *= -1; // TODO: this is a hack
                     //}
-                    
-                    //if (finalFreq < FREQ_HIST_MAX)
-                    //{
 
-                    //    _freqHist[(int)(finalFreq / 100)]++;
-                    //}
-                    //else
-                    //{
-                    //    _freqHist[_freqHist.Length - 1]++;
-                    //}
+                    if (finalFreq < FREQ_HIST_MAX)
+                    {
+
+                        _freqHist[(int)(finalFreq / 100)]++;
+                    }
+                    else
+                    {
+                        _freqHist[_freqHist.Length - 1]++;
+                    }
                 }
                 else
                 {
@@ -197,6 +232,8 @@ namespace FractalProject
             //{
                 _buffer.Amplify(0.5 / peakAmp);
             //}
+
+  
         }
 
         public string frequencyHist()
@@ -269,16 +306,12 @@ namespace FractalProject
             return returning;
         }
 
-        public void setStarMode(Boolean starMode)
-        {
-            _fractalImage.setStarMode(starMode);
-        }
 
-
-        public void saveAsSVG(string fileName)
+        public FractalImage getImageObject()
         {
-            _fractalImage.saveAsSVG(fileName);
+            return _fractalImage;
         }
+ 
 
     }
     public class FractalStackObject

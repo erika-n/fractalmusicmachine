@@ -1,13 +1,13 @@
 ; Setup for Fractal Music Machine
 
 [Setup]
-AppName="Fractal Music Machine"
-AppVersion=0.0.1
-DefaultDirName="{pf}\Fractal Music Machine"
-DefaultGroupName="Fractal Music Machine"
+AppName="Fractal Music Machine 1.0.5 (noimage)"
+AppVersion=1.0.2
+DefaultDirName="{pf}\Fractal Music Machine 1.0.5"
+DefaultGroupName="Fractal Music Machine 1.0.2"
 Compression=lzma2
 SolidCompression=yes
-UninstallDisplayName="Fractal Music Machine"
+UninstallDisplayName="Fractal Music Machine 1.0.5"
 OutputBaseFilename="FractalMusicMachineSetup"
 
 [Dirs]
@@ -22,7 +22,7 @@ Source: "DefaultContent\*"; DestDir: "{userdocs}\Fractal Music Machine"; Flags: 
 
 
 [Icons]
-Name: "{group}\Fractal Music Machine"; Filename: "{app}\FractalMusicMachine.exe"; WorkingDir: "{app}"
+Name: "{group}\Fractal Music Machine 1.0.2"; Filename: "{app}\FractalMusicMachine.exe"; WorkingDir: "{app}"
 Name: "{group}\Uninstall"; Filename: "{uninstallexe}"
 Name: "{group}\Saved Files"; Filename: "{userdocs}\Fractal Music Machine\saved"
 

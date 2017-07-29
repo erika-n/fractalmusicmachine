@@ -20,6 +20,8 @@ namespace FractalProject
        
         public const string VIDEO_FOLDER = @"C:\Users\Erika\Videos\FractalMusic\";
         private const int VIDEO_SIZE = 1080;
+        private const int OUTPUT_SIZE = 3000;
+
         private const float WIDTH_BUFFER = 0;
         private const float HEIGHT_BUFFER = 10;
         
@@ -48,7 +50,7 @@ namespace FractalProject
 
        // Hazy blue theme
        private static Color BACKGROUND = Color.White;
-       private static Color FOREGROUND = Color.FromArgb(255, 30, 30, 255);
+       private static Color FOREGROUND = Color.Turquoise;//Color.FromArgb(255, 30, 30, 255);
        private static Color GRADIENT1 = Color.FromArgb(120, Color.Gray);//Color.FromArgb(200, 0, 33, 200);
        private static Color GRADIENT2 = Color.FromArgb(0, Color.LightGray);//Color.FromArgb(0, 255, 255, 255);
 
@@ -132,8 +134,8 @@ namespace FractalProject
             {
                 _svg += "<rect x=\"" + (int)(start * svgwidth)
                     + "\" y=\"" + (int)(ymin * svgheight)
-                    + "\" width=\"" + (int)((end-start) * svgheight)
-                    + "\" height=\"" + (int)((ymax-ymin) * svgheight)
+                    + "\" width=\"" + (int)(Math.Abs(end-start) * svgheight)
+                    + "\" height=\"" + (int)(Math.Abs(ymax-ymin) * svgheight)
                     + "\" stroke=\"black\" stroke-width=\"" + PEN_WIDTH
                     + "\" stroke-opacity=\"" + ((double)color.A / 255)
                     + "\" />\n";
@@ -236,6 +238,22 @@ namespace FractalProject
                     float y1 = (float)(HEIGHT_BUFFER + (ymin * height));
                     float x2 = (float)(WIDTH_BUFFER + (end * width));
                     float y2 = (float)(HEIGHT_BUFFER + (ymax * height));
+                    
+                    // Make sure reversed lines get drawn
+                    if (x2 < x1)
+                    {
+                        float tmpx = x1;
+                        x1 = x2;
+                        x2 = tmpx;
+                    }
+
+           
+                    if (y2 < y1)
+                    {
+                        float tmpy = y1;
+                        y1 = y2;
+                        y2 = tmpy;
+                    }
 
                     if (rect) 
                     {
@@ -372,7 +390,7 @@ namespace FractalProject
         {
             if (_stillImage == null)
             {
-                _stillImage = animateScore(-1, maxDepth);
+                _stillImage = animateScoreSpecific(0, _score.Count, _width, _height, false, true);
             }
             return new Bitmap(_stillImage);
         }
@@ -384,34 +402,39 @@ namespace FractalProject
         }
 
 
-        public Bitmap animateScoreSpecific(double time, int maxDepth, int width, int height)
+        public Bitmap animateScoreSpecific(double time, int maxDepth, int width, int height, Boolean sweeper = true, Boolean forceRender = false)
         {
-    
-
-            if (time < 0 && _stillImage != null) 
+            Debug.WriteLine("Rendering image...");
+            if (!forceRender)
             {
-                return new Bitmap(_stillImage);
-            }
-            if(time > -1 && (maxDepth > MAX_ANIMATE_DEPTH)){
-                return quickAnimateScore(time, maxDepth);
+                if (time < 0 && _stillImage != null)
+                {
+                    return new Bitmap(_stillImage);
+                }
+                if (time > -1 && (maxDepth > MAX_ANIMATE_DEPTH))
+                {
+                    return quickAnimateScore(time, maxDepth);
+                }
             }
 
             Boolean svg = false;
-            if (time < 0)
-            {
-                svg = true;
-                // if this is the first time through, create svg file
-                _svg = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
-                _svg += "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n";
-            }
+            //if (time < 0)
+            //{
+            //    svg = true;
+            //    // if this is the first time through, create svg file
+            //    _svg = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n";
+            //    _svg += "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\">\n";
+            //}
 
 
             Bitmap image = new Bitmap(width, height); //_image;
             Boolean toHighlight;
             
             drawBackground(image);
-            drawSweeper(time, image);
-
+            if (sweeper)
+            {
+                drawSweeper(time, image);
+            }
             double maxFreq = 0;
             double minFreq = 1;
             foreach (FractalRect fr in _score)
@@ -426,16 +449,23 @@ namespace FractalProject
                 }
             }
 
+            int i = 0;
             foreach (FractalRect fr in _score)
             {
+                
                 if (fr.depth == 0)
                 {
                     toHighlight = (Math.Abs(time - fr.start) < 0.0001 || (time > fr.start && time < fr.end));
                     double peakTime = fr.start + (fr.end - fr.start) / 2;
                     double starTime = time > peakTime ? Math.Abs(time - fr.end) / (fr.end - fr.start) : Math.Abs(time - fr.start) / (fr.end - fr.start);
-                    Color myColor = Color.FromArgb((int)(255 * (fr.soft)), Color.Firebrick);
+                    Color myColor = Color.FromArgb((int)(155 * (fr.soft) + 100), FOREGROUND);
                     draw(fr.start, fr.end, fr.ymin, fr.ymax, fr.freq, toHighlight, 0, maxFreq, minFreq, image, myColor, starTime, maxDepth, svg);       
                 }
+                if (i % 1000 == 0)
+                {
+                    Debug.WriteLine("Rendering image, line " + i);
+                }
+                i++;
             }
             if (time < 0)
             {
@@ -451,6 +481,14 @@ namespace FractalProject
             System.IO.StreamWriter file = new System.IO.StreamWriter(fileName);
             file.Write(_svg);
             file.Close();
+        }
+
+        public void saveToFile(string fileName)
+        {
+            Bitmap frame = animateScoreSpecific(0, _score.Count, OUTPUT_SIZE, OUTPUT_SIZE, false, true);
+            frame.Save(fileName);
+            frame.Dispose();
+            System.GC.Collect();
         }
 
 

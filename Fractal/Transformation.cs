@@ -62,7 +62,7 @@ namespace FractalProject
 
         public double[] getNewFreqs(double freq, double freq2)
         {
-
+            //return new double[] {freq * this.multFrequency , freq2 * this.addFrequency};
             return getNewVals(freq, freq2, this.multFrequency, this.addFrequency);
  
         }

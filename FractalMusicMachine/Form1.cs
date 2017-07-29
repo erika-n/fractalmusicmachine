@@ -110,6 +110,7 @@ namespace SoundLabUI
             {
                 theStack = _buildingFractal.partialStackRun(theStack, stepsPerBlock);
                 fractalMakerBackgroundWorker.ReportProgress((int)(100 * i /blocks ));
+                Debug.WriteLine("Reporting progress: " +  i + " / " + blocks + " steps run" );
                 if (fractalMakerBackgroundWorker.CancellationPending)
                 {
                     e.Cancel = true;
@@ -117,17 +118,21 @@ namespace SoundLabUI
                 }
 
             }
+            Debug.WriteLine("finishing...");
             _buildingFractal.finish();
-            _waveForm = new SoundLabUI.WaveForm(_buildingFractal.getSound(), waveFormBox.Width, waveFormBox.Height);
-           
+           // _waveForm = new SoundLabUI.WaveForm(_buildingFractal.getSound(), waveFormBox.Width, waveFormBox.Height);
+
+            Debug.WriteLine("getting image...");
             _fractalBitmap = _buildingFractal.getImage();
             fractalMakerBackgroundWorker.ReportProgress(99);
+            Debug.WriteLine("saving sound file...");
             WavFile.Save(_soundFile, _buildingFractal.getSound());
 
             if (fractalMakerBackgroundWorker.CancellationPending)
             {
                 e.Cancel = true;
             }
+            Debug.WriteLine("done generating fractal.");
             fractalMakerBackgroundWorker.ReportProgress(100);
             
 
@@ -163,7 +168,7 @@ namespace SoundLabUI
             Fractal oldFractal = _fractal;
             
             _fractal = _buildingFractal;
-            _fractal.setStarMode(_starMode);
+            _fractal.getImageObject().setStarMode(_starMode);
 
 
             _totalTime = _fractal.getSound().getMilliseconds();
@@ -172,7 +177,7 @@ namespace SoundLabUI
 
 
 
-            waveFormBox.Image = _waveForm.GetImage();
+            //waveFormBox.Image = _waveForm.GetImage();
             _fractalStopwatch.Stop();
             if (oldFractal != null)
             {
@@ -238,6 +243,7 @@ namespace SoundLabUI
             maxWavesTextBox.Text = "" + fp.maxWaves;
             minWavesTextBox.Text = "" + fp.minWaves;
             baseFreqTextBox.Text = "" + fp.baseFreq;
+            attackDecayTextBox.Text = "" + fp.attackDecay;
             oscillatorComboBox.Text = "" + oscillatorComboBox.Items[fp.oscillator];
             sampleComboBox.SelectedIndex = -1;
             sampleComboBox.Text = "" + fp.sample;
@@ -382,7 +388,7 @@ namespace SoundLabUI
        {
 
 
-           int seconds, depth, minWaves, maxWaves, cutoffHigh, cutoffLow, oscillator;
+           int seconds, depth, minWaves, maxWaves, cutoffHigh, cutoffLow, oscillator, attackDecay;
            double baseFreq;
            string sampleFile = "", sampleFileName = "";
            if (!System.Int32.TryParse(secondsTextBox.Text, out seconds) || seconds < MIN_SECONDS || seconds > MAX_SECONDS)
@@ -413,6 +419,12 @@ namespace SoundLabUI
            if (!System.Double.TryParse(baseFreqTextBox.Text, out baseFreq) || baseFreq < 0)
            {
                MessageBox.Show("Invalid input for frequency factor: " + baseFreqTextBox.Text);
+               return false;
+           }
+
+           if (!System.Int32.TryParse(attackDecayTextBox.Text, out attackDecay) || attackDecay < 0)
+           {
+               MessageBox.Show("Invalid input for attack/decay: " + attackDecayTextBox.Text);
                return false;
            }
            if (!System.Int32.TryParse(cutoffHighTextBox.Text, out cutoffHigh) || cutoffHigh < 0)
@@ -457,6 +469,7 @@ namespace SoundLabUI
            _fractalVariables.maxWaves = maxWaves;
            _fractalVariables.minWaves = minWaves;
            _fractalVariables.baseFreq = baseFreq;
+           _fractalVariables.attackDecay = attackDecay;
            _fractalVariables.transformations = loadTransformationsFromForm();
            if (_fractalVariables.transformations == null)
            {
@@ -484,7 +497,7 @@ namespace SoundLabUI
        {
   
            fractalBox.Image = _fractal.getScoreAnimation(-1);
-           waveFormBox.Image = _waveForm.GetImage();
+           //waveFormBox.Image = _waveForm.GetImage();
            generatedLabel.Visible = true;
        }
 
@@ -505,7 +518,7 @@ namespace SoundLabUI
            _scoreAnimating = true;
            _transitionAnimating = false;
 
-
+           
        }
 
        private void transitionAnimate()
@@ -581,7 +594,7 @@ namespace SoundLabUI
                }
                else if (_scoreAnimating)
                {
-                   act = () => { fractalBox.Image.Dispose();  fractalBox.Image = _fractal.getScoreAnimation(scoreTime); };
+                  act = () => { fractalBox.Image.Dispose();  fractalBox.Image = _fractal.getScoreAnimation(scoreTime); };
                }
                fractalBox.Invoke(act);
            }
@@ -661,7 +674,8 @@ namespace SoundLabUI
            }
            FractalPresets.Save(_fractalVariables, fileName);
            WavFile.Save(SoundUtil.SAVE_FOLDER + "\\" + fileName + ".wav", _fractal.getSound());
-           _fractal.saveAsSVG(SoundUtil.SAVE_FOLDER + "\\" + fileName + ".svg");
+           //_fractal.getImageObject().saveAsSVG(SoundUtil.SAVE_FOLDER + "\\" + fileName + ".svg");
+           _fractal.getImageObject().saveToFile(SoundUtil.SAVE_FOLDER + "\\" + fileName + ".png");
            presetComboBox.Items.Add(fileName);
          
        }
