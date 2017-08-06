@@ -118,7 +118,7 @@ namespace FractalProject
 
 
                 double finalFreq = (thisRun.freq  + thisRun.freq2)/2;
-
+                finalFreq = 1 - finalFreq; // get it to appear right on y axis in image.
    
 
                 double finalSoft =  (thisRun.soft1 + thisRun.soft2) / 2;

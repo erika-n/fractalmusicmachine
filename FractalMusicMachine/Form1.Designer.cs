@@ -255,7 +255,7 @@
             // maxWavesTextBox
             // 
             this.maxWavesTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.maxWavesTextBox.Location = new System.Drawing.Point(138, 320);
+            this.maxWavesTextBox.Location = new System.Drawing.Point(155, 321);
             this.maxWavesTextBox.Name = "maxWavesTextBox";
             this.maxWavesTextBox.Size = new System.Drawing.Size(72, 26);
             this.maxWavesTextBox.TabIndex = 16;
@@ -267,14 +267,14 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(25, 320);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 24);
+            this.label4.Size = new System.Drawing.Size(124, 24);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Max waves:";
+            this.label4.Text = "Max samples:";
             // 
             // minWavesTextBox
             // 
             this.minWavesTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.minWavesTextBox.Location = new System.Drawing.Point(138, 283);
+            this.minWavesTextBox.Location = new System.Drawing.Point(155, 284);
             this.minWavesTextBox.Name = "minWavesTextBox";
             this.minWavesTextBox.Size = new System.Drawing.Size(72, 26);
             this.minWavesTextBox.TabIndex = 14;
@@ -286,9 +286,10 @@
             this.label5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(24, 286);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 24);
+            this.label5.Size = new System.Drawing.Size(121, 24);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Min waves:";
+            this.label5.Text = "Min samples:";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // depthPlus
             // 

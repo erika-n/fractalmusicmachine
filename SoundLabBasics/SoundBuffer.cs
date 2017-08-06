@@ -162,15 +162,18 @@ namespace SoundLabBasics
             }
 
 
-            double waveLength = SoundUtil.SAMPLE_RATE/440;//TMPDEBUG// / freq;
-            int minWidth = (int)(minWaves * waveLength);
+            //double waveLength = SoundUtil.SAMPLE_RATE/440;//TMPDEBUG// / freq;
+            int minWidth = (int)(minWaves);
 
             int left = (int)(start * Length);
-            int right = Math.Max((int)(end * Length), left + minWidth);
+            int right = (int)(end * Length);
+            if((right - left) < minWidth){
+                return; // ignore tiny samples to avoid static
+            }
             int maxWidth = right - left;
             if (maxWaves > 0)
             {
-                maxWidth = (int)(maxWaves * waveLength);
+                maxWidth = (int)(maxWaves );
             }
             right = Math.Min(right, left + maxWidth);
             envelope.Start(right - left);
