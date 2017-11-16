@@ -48,13 +48,16 @@ namespace FractalProject
         private static Color HIGHLIGHT = Color.Black;//Color.FromArgb(255, 0, 150, 0);
        private static Color SWEEPER = HIGHLIGHT;
 
-       // Hazy blue theme
-       private static Color BACKGROUND = Color.White;
-       private static Color FOREGROUND = Color.Firebrick;//Color.FromArgb(255, 30, 30, 255);
+       // old theme
+       //private static Color BACKGROUND = Color.White;
+       //private static Color FOREGROUND = Color.Firebrick;//Color.FromArgb(255, 30, 30, 255);
+       //private static Color GRADIENT1 = Color.FromArgb(120, Color.Gray);//Color.FromArgb(200, 0, 33, 200);
+       //private static Color GRADIENT2 = Color.FromArgb(0, Color.LightGray);//Color.FromArgb(0, 255, 255, 255);
+
+       private static Color BACKGROUND = Color.MediumTurquoise;
+       private static Color FOREGROUND = Color.HotPink;//Color.FromArgb(255, 30, 30, 255);
        private static Color GRADIENT1 = Color.FromArgb(120, Color.Gray);//Color.FromArgb(200, 0, 33, 200);
        private static Color GRADIENT2 = Color.FromArgb(0, Color.LightGray);//Color.FromArgb(0, 255, 255, 255);
-
-
 
        private const int PEN_WIDTH = 10;
        private const int SWEEPER_WIDTH = 2;
