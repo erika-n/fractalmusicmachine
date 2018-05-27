@@ -17,7 +17,11 @@ using System.IO;
 namespace SoundLabUI
 {
     public partial class Form1 : Form
-    {   
+    {
+
+
+        private Boolean recording = false;
+
         private WaveForm _waveForm;
         private Fractal _fractal, _buildingFractal;
         private string _soundFile = SoundUtil.SAVE_FOLDER + "\\fractal.wav";
@@ -820,7 +824,24 @@ namespace SoundLabUI
 
        }
 
-       private void label5_Click(object sender, EventArgs e)
+        private void recordButton_Click(object sender, EventArgs e)
+        {
+            if (recording)
+            {
+
+                recording = false;
+                recordButton.Text = "Record Sample";
+            }
+            else
+            {
+
+
+                recording = true;
+                recordButton.Text = "Stop Recording";
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
        {
 
        }

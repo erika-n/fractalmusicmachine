@@ -127,6 +127,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.recordButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fractalBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.waveFormBox)).BeginInit();
             this.panel2.SuspendLayout();
@@ -160,7 +161,7 @@
             this.stopAnimationButton.BackColor = System.Drawing.Color.HotPink;
             this.stopAnimationButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopAnimationButton.ForeColor = System.Drawing.Color.White;
-            this.stopAnimationButton.Location = new System.Drawing.Point(594, 966);
+            this.stopAnimationButton.Location = new System.Drawing.Point(594, 952);
             this.stopAnimationButton.Name = "stopAnimationButton";
             this.stopAnimationButton.Size = new System.Drawing.Size(272, 54);
             this.stopAnimationButton.TabIndex = 4;
@@ -228,7 +229,7 @@
             this.animateButton.BackColor = System.Drawing.Color.DeepPink;
             this.animateButton.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.animateButton.ForeColor = System.Drawing.Color.White;
-            this.animateButton.Location = new System.Drawing.Point(594, 871);
+            this.animateButton.Location = new System.Drawing.Point(594, 857);
             this.animateButton.Name = "animateButton";
             this.animateButton.Size = new System.Drawing.Size(272, 89);
             this.animateButton.TabIndex = 2;
@@ -711,7 +712,7 @@
             this.loopCheckbox.Checked = true;
             this.loopCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.loopCheckbox.ForeColor = System.Drawing.Color.Black;
-            this.loopCheckbox.Location = new System.Drawing.Point(191, 586);
+            this.loopCheckbox.Location = new System.Drawing.Point(468, 581);
             this.loopCheckbox.Name = "loopCheckbox";
             this.loopCheckbox.Size = new System.Drawing.Size(71, 24);
             this.loopCheckbox.TabIndex = 59;
@@ -725,7 +726,7 @@
             this.starModeCheckbox.AutoSize = true;
             this.starModeCheckbox.BackColor = System.Drawing.Color.Transparent;
             this.starModeCheckbox.ForeColor = System.Drawing.Color.Black;
-            this.starModeCheckbox.Location = new System.Drawing.Point(277, 586);
+            this.starModeCheckbox.Location = new System.Drawing.Point(468, 628);
             this.starModeCheckbox.Name = "starModeCheckbox";
             this.starModeCheckbox.Size = new System.Drawing.Size(82, 24);
             this.starModeCheckbox.TabIndex = 60;
@@ -760,7 +761,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(67, 590);
+            this.label17.Location = new System.Drawing.Point(344, 585);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(118, 20);
             this.label17.TabIndex = 64;
@@ -1107,7 +1108,7 @@
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.minWavesTextBox);
             this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(119, 590);
+            this.panel6.Location = new System.Drawing.Point(97, 628);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(272, 374);
             this.panel6.TabIndex = 70;
@@ -1161,12 +1162,26 @@
             this.label22.TabIndex = 42;
             this.label22.Text = "Start";
             // 
+            // recordButton
+            // 
+            this.recordButton.BackColor = System.Drawing.Color.DeepPink;
+            this.recordButton.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recordButton.ForeColor = System.Drawing.Color.White;
+            this.recordButton.Location = new System.Drawing.Point(143, 565);
+            this.recordButton.Name = "recordButton";
+            this.recordButton.Size = new System.Drawing.Size(226, 40);
+            this.recordButton.TabIndex = 71;
+            this.recordButton.Text = "Record Sample";
+            this.recordButton.UseVisualStyleBackColor = false;
+            this.recordButton.Click += new System.EventHandler(this.recordButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(1894, 1028);
+            this.Controls.Add(this.recordButton);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.starModeCheckbox);
@@ -1304,6 +1319,7 @@
         private System.Windows.Forms.TextBox sft10TextBox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox attackDecayTextBox;
+        private System.Windows.Forms.Button recordButton;
     }
 }
 
