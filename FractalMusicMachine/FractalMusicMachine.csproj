@@ -48,10 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ED364748D061FE19CDB92A6B9D16973E4F92CCFB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>C7A8BF8412AE83F49B7A18C40A84EB984584502C</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SoundLabUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FractalMusicMachine_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -424,6 +424,7 @@
     <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\wish hard enough.wav.deploy" />
     <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\wish it.wav.deploy" />
     <None Include="bin\Release\app.publish\Application Files\SoundLabUI_1_0_0_7\bin\Release\sounds\xun.wav.deploy" />
+    <None Include="FractalMusicMachine_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

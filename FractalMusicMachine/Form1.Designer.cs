@@ -956,7 +956,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1894, 1061);
+            this.ClientSize = new System.Drawing.Size(1894, 1050);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.starModeCheckbox);
